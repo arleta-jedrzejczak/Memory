@@ -1,6 +1,6 @@
 <template>
     <div class="game">
-           <div class="game__card" v-on:click="switchCard(card)" v-for="card in cards" v-bind:key="card.id" v-html="card.text" v-bind:class="{checked: card.checked}" v-on:DOMContentLoaded="randomList">
+           <div class="game__card" v-on:click="switchCard(card, cards)" v-for="card in cards" v-bind:key="card.id" v-html="card.text" v-bind:class="{checked: card.checked}" v-on:DOMContentLoaded="randomList">
                </div>
     </div>
 </template>
@@ -30,16 +30,17 @@ export default {
     }
   },
   methods: {
-      switchCard: function(card) {
+      switchCard: function(card, cards) {
+            var vm = this;
             card.checked = !card.checked;
-            function Array(propertyArray) {
+            function Array(propertyArray, cards) {
                 if(propertyArray.length < 2) {
                     propertyArray.push(card);
                     while(propertyArray.length == 2){
                         if(propertyArray[0].property === propertyArray[1].property) {
-                            for(var i = 0; i < cards.length; i++) {
-                                if(propertyArray[0] == cards[i] || propertyArray[1] == cards[i]) {
-                                    
+                            for(var i = 0; i < vm.cards.length; i++) {
+                                if(propertyArray[0] == vm.cards[i] || propertyArray[1] == vm.cards[i]) {
+                                    vm.cards[i].active = false;
                                 }
                             }
                         }
@@ -55,7 +56,7 @@ export default {
   computed: {
         randomList: function(){
           return this.cards.sort(function() {
-              return 0.5 - Math.random()});
+              return 0 - Math.random()});
         }
     }
 }
