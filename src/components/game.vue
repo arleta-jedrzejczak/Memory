@@ -27,7 +27,7 @@ export default {
                 { id: 10, text: '<i class="demo-icon icon-github-circled"></i>', checked: true, property: 'github', active: true },
                 { id: 11, text: '<i class="demo-icon icon-linkedin"></i>', checked: true, property: 'linkedin', active: true }
             ]
-        }   
+        }
     },
     methods: {
         switchCard: function(card, cards) {
@@ -53,16 +53,15 @@ export default {
                 }
             }
             return console.log(Array(propertyArray));
-        },
-        turnCard: function()
+        }
     },
-    computed: {
+  computed: {
         randomList: function(){
-            return this.cards.sort(function() {
-                return 0 - Math.random()});
-            }
+          return this.cards.sort(function() {
+              return 0 - Math.random()});
         }
     }
+}
 </script>
 
 <style lang="scss">
