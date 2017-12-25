@@ -8,7 +8,10 @@
 
 
 <script>
-var propertyArray = [];
+var oneVisible = false;
+var turnCounter = 0;
+var firstCardProperty;
+var firstCardId;
 export default {
     data () {
         return {
@@ -32,27 +35,30 @@ export default {
     methods: {
         switchCard: function(card, cards) {
             var vm = this;
+            var changeCard = function() {
+                vm.cards[firstCardId].checked = true;
+                card.checked = true;
+            }
             if(card.active === true){
-            card.checked = !card.checked;
-            }
-            function Array(propertyArray, cards) {
-                if(propertyArray.length < 2) {
-                    propertyArray.push(card);
-                    while(propertyArray.length == 2){
-                        if(propertyArray[0].property === propertyArray[1].property) {
-                            for(var i = 0; i < vm.cards.length; i++) {
-                                if(propertyArray[0] == vm.cards[i] || propertyArray[1] == vm.cards[i]) {
-                                    vm.cards[i].active = false;
-                                }
-                            }
-                        }
-                    return propertyArray;
+            card.checked = false;
+                if(oneVisible === false) { //first card
+                    oneVisible = true;
+                    firstCardProperty = card.property;
+                    firstCardId = card.id;
+                }
+                else { //second card
+                    if(card.property === firstCardProperty) { //similarity
+                       alert('y');
                     }
-                }
-                else {
+                    else { //lack of similarity
+                        setTimeout(changeCard, 1000);
+                        console.log(firstCardId);
+                        console.log(vm.cards[firstCardId]); //WHY IT LOG TO THE CONSOLE THE SECOND CARD?
+                    }
+                    turnCounter++;
+                    oneVisible = false;
                 }
             }
-            return console.log(Array(propertyArray));
         }
     },
   computed: {
