@@ -234,6 +234,14 @@ main {
     border-color: $stark;
 }
 
+.passive {
+    cursor: initial;
+    background-color: gray;
+    border-color: darkslategrey;
+    &:hover {
+        filter: brightness(70%);
+    }
+}
 
 
 
