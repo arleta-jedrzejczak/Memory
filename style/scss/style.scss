@@ -27,6 +27,7 @@ $vermillion: #fc4a1a;
     font-size: 16px;
     padding: 12px;
     height: 40px;
+    cursor: pointer;
 }
 
 @mixin button--hover {
@@ -225,6 +226,24 @@ main {
         &:before {
         }
     }
+}
+
+//GAMEBOARD
+.hidden {
+    display: none;
+}
+
+.secret {
+    display: none;
+}
+
+.end {
+    display: none;
+}
+
+.button {
+    @include button;
+    background-color: $vermillion;
 }
 
 //CARDS
