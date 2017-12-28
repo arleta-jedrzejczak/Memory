@@ -4,9 +4,11 @@
     <keep-alive>
       <component v-bind:is="component" />
     </keep-alive>
-    <button v-on:click="component = 'contact'">Show contact</button>
-    <button v-on:click="component = 'game'">Show game</button>
-    <button v-on:click="component = 'about'">Show about</button>
+    <div>
+      <button v-on:click="component = 'contact'">Show contact</button>
+      <button v-on:click="component = 'game'">Show game</button>
+      <button v-on:click="component = 'about'">Show about</button>
+    </div>
   </div>
 </template>
 
@@ -36,6 +38,8 @@ export default {
 </script>
 
 <style lang="scss">
+.butt {
 
+}
 
 </style>
