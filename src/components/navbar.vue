@@ -13,6 +13,7 @@
                     <p class="navbar__description">{{ item.description }}</p>
             </li>
         </ul>
+        <p v-on:click="changeComponent">{{ component }}</p>
     </nav>
 </template>
 
@@ -20,7 +21,11 @@
 
 
 export default {
-
+  props: {
+      component: {
+          type: String
+      }
+  },
   data () {
     return {
         items: [
@@ -30,10 +35,13 @@ export default {
             { id: 3, text: '<a href="#skills" class="navbar__link"><div class="navbar__icon"><i class="demo-icon icon-cog-alt navbar__icon--size"></i></div><p class="navbar__description">Skills</p></a>' },
             { id: 4, text: '<a href="#contact" class="navbar__link"><div class="navbar__icon"><i class="demo-icon icon-mail-1 navbar__icon--size"></i></div><p class="navbar__description">Contact</p></a>' }
         ],
+        component: 'game'
     }
   },
   methods: {
-      
+      changeComponent: function() {
+          this.$emit = ('changeComponent', 'contact');
+      }
   }
 }   
 </script>
