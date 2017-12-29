@@ -4,11 +4,11 @@
 
 <script>
 
-import footer from './components/footer.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   components: {
-    'app-footer': footer
+    'app-footer': Footer
   },
   data () {
     return {

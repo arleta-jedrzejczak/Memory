@@ -5,33 +5,33 @@
       <component v-bind:is="component" />
     </keep-alive>
     <div>
-      <button v-on:click="component = 'contact'">Show contact</button>
-      <button v-on:click="component = 'home'">Show home</button>
-      <button v-on:click="component = 'about'">Show about</button>
-      <button v-on:click="component = 'projects'">Show projects</button>
+      <button v-on:click="component = 'Contact'">Show contact</button>
+      <button v-on:click="component = 'Home'">Show home</button>
+      <button v-on:click="component = 'About'">Show about</button>
+      <button v-on:click="component = 'Projects'">Show projects</button>
     </div>
   </div>
 </template>
 
 <script>
 
-import navbar from './components/navbar.vue'
-import home from './components/home.vue'
-import contact from './components/contact.vue'
-import about from './components/about.vue'
-import projects from './components/projects.vue'
+import Navbar from './components/Navbar.vue'
+import Home from './components/Home.vue'
+import Contact from './components/Contact.vue'
+import About from './components/About.vue'
+import Projects from './components/Projects.vue'
 
 export default {
   components: {
-    'navbar': navbar,
-    'home': home,
-    'contact': contact,
-    'about': about,
-    'projects': projects
+    'Navbar': Navbar,
+    'Home': Home,
+    'Contact': Contact,
+    'About': About,
+    'Projects': Projects
   },
   data () {
     return {
-      component: 'home',
+      component: 'Home',
     }
   },
   methods: {

@@ -4,11 +4,11 @@
 
 <script>
 
-import header from './components/header.vue'
+import Header from './components/Header.vue'
 
 export default {
   components: {
-    'app-header': header
+    'app-header': Header
   },
   data () {
     return {
