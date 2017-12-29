@@ -6,7 +6,7 @@
     </keep-alive>
     <div>
       <button v-on:click="component = 'contact'">Show contact</button>
-      <button v-on:click="component = 'game'">Show game</button>
+      <button v-on:click="component = 'home'">Show home</button>
       <button v-on:click="component = 'about'">Show about</button>
       <button v-on:click="component = 'projects'">Show projects</button>
     </div>
@@ -16,7 +16,7 @@
 <script>
 
 import navbar from './components/navbar.vue'
-import game from './components/game.vue'
+import home from './components/home.vue'
 import contact from './components/contact.vue'
 import about from './components/about.vue'
 import projects from './components/projects.vue'
@@ -24,14 +24,14 @@ import projects from './components/projects.vue'
 export default {
   components: {
     'navbar': navbar,
-    'game': game,
+    'home': home,
     'contact': contact,
     'about': about,
     'projects': projects
   },
   data () {
     return {
-      component: 'game',
+      component: 'home',
     }
   },
   methods: {

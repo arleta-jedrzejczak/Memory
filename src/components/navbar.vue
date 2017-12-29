@@ -33,14 +33,15 @@ export default {
             { id: 1, text: '<a href="#about" class="navbar__link"><div class="navbar__icon"><i class="demo-icon icon-user navbar__icon--size"></i></div><p class="navbar__description">About</p></a>' },
             { id: 2, text: '<a href="#projects" class="navbar__link"><div class="navbar__icon"><i class="demo-icon icon-file-code navbar__icon--size"></i></div><p class="navbar__description">Projects</p></a>' },
             { id: 3, text: '<a href="#skills" class="navbar__link"><div class="navbar__icon"><i class="demo-icon icon-cog-alt navbar__icon--size"></i></div><p class="navbar__description">Skills</p></a>' },
-            { id: 4, text: '<a href="#contact" class="navbar__link"><div class="navbar__icon"><i class="demo-icon icon-mail-1 navbar__icon--size"></i></div><p class="navbar__description">Contact</p></a>' }
+            { id: 4, text: '<a href="#contact" class="navbar__link"><div class="navbar__icon"><i class="demo-icon icon-mail-1 navbar__icon--size"></i></div><p class="navbar__description">Contact</p></a>', }
         ],
+        gogol: {desc: 'contact'},
         component: 'game'
     }
   },
   methods: {
       changeComponent: function() {
-          this.$emit('changeComponent', 'contact');
+          this.$emit('changeComponent', this.gogol.desc );
       }
   }
 }   
