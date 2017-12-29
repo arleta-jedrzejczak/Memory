@@ -40,7 +40,7 @@ export default {
   },
   methods: {
       changeComponent: function() {
-          this.$emit = ('changeComponent', 'contact');
+          this.$emit('changeComponent', 'contact');
       }
   }
 }   
