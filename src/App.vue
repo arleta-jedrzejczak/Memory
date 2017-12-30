@@ -2,14 +2,8 @@
   <div class="grid">
     <navbar v-bind:component='component' v-on:changeComponent="updateComponent($event)"/>
     <keep-alive>
-      <component v-bind:is="component" />
+      <component v-bind:is="component" v-on:changeComponent="updateComponent($event)"/>
     </keep-alive>
-    <div>
-      <button v-on:click="component = 'Contact'">Show contact</button>
-      <button v-on:click="component = 'Home'">Show home</button>
-      <button v-on:click="component = 'About'">Show about</button>
-      <button v-on:click="component = 'Projects'">Show projects</button>
-    </div>
   </div>
 </template>
 
@@ -20,6 +14,7 @@ import Home from './components/Home.vue'
 import Contact from './components/Contact.vue'
 import About from './components/About.vue'
 import Projects from './components/Projects.vue'
+import Skills from './components/Skills.vue'
 
 export default {
   components: {
@@ -27,7 +22,8 @@ export default {
     'Home': Home,
     'Contact': Contact,
     'About': About,
-    'Projects': Projects
+    'Projects': Projects,
+    'Skills': Skills
   },
   data () {
     return {

@@ -14,7 +14,7 @@
     </div>
     <div v-bind:class="{secret: secret}">
         <div class="button"  v-on:click="secret = !secret, hidden = !hidden">BACK TO GAME</div>
-        <div class="button" id="link"></div>
+        <div class="button" id="link" v-on:click="changeComponent()"></div>firstCardProperty
     </div>
     <div v-bind:class="{end: end}">
         <p>You won in {{ turnCounter }} turns!</p>
@@ -44,14 +44,14 @@ export default {
             pairs: 6,
             oneVisible: false,
             cards: [
-                { id: 0, text: '<i class="demo-icon icon-user"></i>', checked: true, property: 'about', passive: false },
-                { id: 1, text: '<i class="demo-icon icon-user"></i>', checked: true, property: 'about', passive: false },
-                { id: 2, text: '<i class="demo-icon icon-file-code"></i>', checked: true, property: 'projects', passive: false },
-                { id: 3, text: '<i class="demo-icon icon-file-code"></i>', checked: true, property: 'projects', passive: false },
-                { id: 4, text: '<i class="demo-icon icon-cog-alt"></i>', checked: true, property: 'skills', passive: false },
-                { id: 5, text: '<i class="demo-icon icon-cog-alt"></i>', checked: true, property: 'skills', passive: false },
-                { id: 6, text: '<i class="demo-icon icon-mail-1"></i>', checked: true, property: 'contact', passive: false },
-                { id: 7, text: '<i class="demo-icon icon-mail-1"></i>', checked: true, property: 'contact', passive: false },
+                { id: 0, text: '<i class="demo-icon icon-user"></i>', checked: true, property: 'About', passive: false },
+                { id: 1, text: '<i class="demo-icon icon-user"></i>', checked: true, property: 'About', passive: false },
+                { id: 2, text: '<i class="demo-icon icon-file-code"></i>', checked: true, property: 'Projects', passive: false },
+                { id: 3, text: '<i class="demo-icon icon-file-code"></i>', checked: true, property: 'Projects', passive: false },
+                { id: 4, text: '<i class="demo-icon icon-cog-alt"></i>', checked: true, property: 'Skills', passive: false },
+                { id: 5, text: '<i class="demo-icon icon-cog-alt"></i>', checked: true, property: 'Skills', passive: false },
+                { id: 6, text: '<i class="demo-icon icon-mail-1"></i>', checked: true, property: 'Contact', passive: false },
+                { id: 7, text: '<i class="demo-icon icon-mail-1"></i>', checked: true, property: 'Contact', passive: false },
                 { id: 8, text: '<i class="demo-icon icon-github-circled"></i>', checked: true, property: 'github', passive: false, link: '<a href="https://github.com/laililang" target="_blank">Go to my GitHub</a>' },
                 { id: 9, text: '<i class="demo-icon icon-github-circled"></i>', checked: true, property: 'github', passive: false, link: '<a href="https://github.com/laililang" target="_blank">Go to my GitHub</a>' },
                 { id: 10, text: '<i class="demo-icon icon-linkedin"></i>', checked: true, property: 'linkedin', passive: false, link: '<a href="https://pl.linkedin.com/in/arleta-j%C4%99drzejczak-167345147" target="_blank">Go to my LinkedIn</a>' },
@@ -60,6 +60,10 @@ export default {
         }
     },
     methods: {
+        changeComponent: function(firstCardProperty) {
+          var vm = this;
+          this.$emit('changeComponent', this.firstCardProperty );
+        },
         switchCard: function(card, cards) {
 
             var vm = this;
@@ -78,7 +82,7 @@ export default {
                     target.innerHTML = vm.firstCardLink;
                 }
                 else {
-                    target.innerHTML = "test";
+                    target.innerHTML = vm.firstCardProperty;
                 }
                 vm.lock = false;
             }
