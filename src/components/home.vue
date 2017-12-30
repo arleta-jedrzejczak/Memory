@@ -14,7 +14,7 @@
     </div>
     <div v-bind:class="{secret: secret}">
         <div class="button"  v-on:click="secret = !secret, hidden = !hidden">BACK TO GAME</div>
-        <div class="button" id="link" v-on:click="changeComponent()"></div>firstCardProperty
+        <div class="button" id="link" v-on:click="changeComponent(firstCardProperty)"></div>
     </div>
     <div v-bind:class="{end: end}">
         <p>You won in {{ turnCounter }} turns!</p>

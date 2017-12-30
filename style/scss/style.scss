@@ -107,11 +107,14 @@ main {
 }
 
 
+//DROPDOWN VISIBLE
+.visibleDropdown {
+    display: none;
+}
 
 //DROPDOWN MENU
 .dropdown-area {
     background-color: $fuschia;
-    display: none;
     &__button {
         background-color: $void;
         @include button--hover();
@@ -130,12 +133,17 @@ main {
 }
 
 .dropdown {
-    display: none;
     &__listitem {
         @include button;
         &:hover {
            @include button--hover; 
         }
+    }
+    &__icon {
+
+    }
+    &__description {
+
     }
 }
 
