@@ -122,6 +122,10 @@ main {
 
 //DROPDOWN MENU
 .dropdown-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px;
     background-color: $fuschia;
     &__button {
         background-color: $void;
@@ -141,6 +145,9 @@ main {
 }
 
 .dropdown {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     &__listitem {
         @include button;
         &:hover {

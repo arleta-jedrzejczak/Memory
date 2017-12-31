@@ -34,8 +34,7 @@ export default {
             { id: 2, text: '<a href="#projects" class="navbar__link"></a>', link: '<i class="demo-icon icon-file-code navbar__icon--size"></i>', description: 'Projects' },
             { id: 3, text: '<a href="#skills" class="navbar__link"></a>', link: '<i class="demo-icon icon-cog-alt navbar__icon--size"></i>', description: 'Skills' },
             { id: 4, text: '<a href="#contact" class="navbar__link"></a>', link: '<i class="demo-icon icon-mail navbar__icon--size"></i>', description: 'Contact' }
-        ],
-        component: 'game'
+        ]
     }
   },
   methods: {

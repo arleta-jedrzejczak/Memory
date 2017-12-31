@@ -27,7 +27,11 @@
 
 <script>
 export default {
-
+    props: {
+      component: {
+          type: String
+      }
+  },
   data () {
     return {
         items: [
@@ -41,6 +45,12 @@ export default {
         menuIcon: false,
         cancelIcon: true
     }
+  },
+  methods: {
+      changeComponent: function(item, items) {
+          var vm = this;
+          this.$emit('changeComponent', item.description );
+      }
   }
 }
 </script>

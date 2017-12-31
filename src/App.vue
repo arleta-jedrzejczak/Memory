@@ -1,6 +1,6 @@
 <template>
   <div class="grid">
-    <dropdown />
+    <dropdown v-bind:component='component' v-on:changeComponent="updateComponent($event)"/>
     <navbar v-bind:component='component' v-on:changeComponent="updateComponent($event)"/>
     <keep-alive>
       <component v-bind:is="component" v-on:changeComponent="updateComponent($event)"/>
