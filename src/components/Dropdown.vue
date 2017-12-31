@@ -13,8 +13,7 @@
                 v-on:click="changeComponent(item, items)"
                 v-for="item in items"
                 v-bind:key="item.id">
-                        <div class="dropdown__icon" v-html="item.link">
-                        </div>
+                        <div class="dropdown__icon" v-html="item.link"></div>
                         <p class="dropdown__description">{{ item.description }}</p>
                 </li>
             </ul> 
@@ -36,7 +35,7 @@ export default {
             { id: 1, text: '<a href="#about" class="navbar__link"></a>', link: '<i class="demo-icon icon-user navbar__icon--size"></i>', description: 'About' },
             { id: 2, text: '<a href="#projects" class="navbar__link"></a>', link: '<i class="demo-icon icon-file-code navbar__icon--size"></i>', description: 'Projects' },
             { id: 3, text: '<a href="#skills" class="navbar__link"></a>', link: '<i class="demo-icon icon-cog-alt navbar__icon--size"></i>', description: 'Skills' },
-            { id: 4, text: '<a href="#contact" class="navbar__link"></a>', link: '<i class="demo-icon icon-mail-1 navbar__icon--size"></i>', description: 'Contact' }
+            { id: 4, text: '<a href="#contact" class="navbar__link"></a>', link: '<i class="demo-icon icon-mail navbar__icon--size"></i>', description: 'Contact' }
         ],
         visibleDropdown: true,
         menuIcon: false,
