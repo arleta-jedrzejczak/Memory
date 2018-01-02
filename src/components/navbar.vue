@@ -8,7 +8,6 @@
             v-on:click="changeComponent(item, items)"
             v-for="item in items"
             v-bind:key="item.id">
-                <!--link-->
                     <div class="navbar__icon" v-html="item.link">
                     </div>
                     <p class="navbar__description">{{ item.description }}</p>
@@ -28,6 +27,7 @@ export default {
   },
   data () {
     return {
+        desc: true,
         items: [
             { id: 0, text: '<a href="#home" class="navbar__link"></a>', link: '<i class="demo-icon icon-home navbar__icon--size"></i>', description: 'Home' },
             { id: 1, text: '<a href="#about" class="navbar__link"></a>', link: '<i class="demo-icon icon-user navbar__icon--size"></i>', description: 'About' },

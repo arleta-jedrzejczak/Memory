@@ -30,6 +30,20 @@ $vermillion: #fc4a1a;
     color: $stark;
 }
 
+@mixin header2 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+@mixin section-size {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 10px;
+}
+
 html, body {
     height: 100%;
 }
@@ -63,9 +77,6 @@ main {
 //VISIBLE NAVIGATION
 .navigation-bar {
     flex-grow: 3;
-    &__scroll {
-
-    }
 }
 
 .navbar {
@@ -76,6 +87,7 @@ main {
     height: 400px;
     justify-content: space-between;
     &__item {
+        cursor: pointer;
         &:hover {
             @include button--hover();
         }
@@ -99,8 +111,8 @@ main {
         }
     }
     &__description {
-        display: block;
         //visibility: hidden;
+        display: block;
         margin-left: 100px;
         padding-left: 20px;
     }
@@ -293,31 +305,44 @@ main {
 
 
 //SECTION: ABOUT
-.about-me {
+
+.about {
+    @include section-size;
     &__name {
-        text-align: center;
+        @include header2;
+}
+
+.about-me {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     }
     &__photo {
-
+        margin-right: 10px;
         border: 1px solid black;
     }
     &__content {
+        margin-left: 10px;
     }
 }
 
 
 
 //SECTION: PROJECTS
+
 .my-projects {
+    @include section-size;
     &__name {
-        text-align: center;
+        @include header2;
     }
 }
 
 .projects-list {
+    flex-wrap: wrap;
     list-style-type: none;
     &__item {
-
+        flex-wrap: wrap;
+        max-width: 45%;
     }
     &__photo {
 
@@ -331,19 +356,22 @@ main {
 
 //SECTION: SKILLS
 .skills {
-
+    @include section-size;
     &__name {
-
-        text-align: center;
+        @include header2;
     }
     &__description {
 
     }
 }
 
-.list-of-skills {
+.skills-list {
+    &__description {
 
-    list-style-type: none;
+    }
+    &__section {
+        list-style-type: none;
+    }
     &__item {
         display: block;
     }
@@ -359,12 +387,19 @@ main {
 
 //SECTION: CONTACT
 .contact-site {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include section-size;
     &__name {
-
+        @include header2;
     }
 }
 
 .contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     &__name {
 
     }
@@ -399,4 +434,4 @@ main {
     color: red;
 }
 
-//@import "media";
+@import "media";

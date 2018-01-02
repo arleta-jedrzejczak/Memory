@@ -1,0 +1,230 @@
+$void: #0E0B16;
+$fuschia: #A239CA;
+$jewel: #4717F6;
+$stark: #E7DFDD;
+
+//MIXINS
+@mixin mobile-paddings {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+@media (max-width: 575px) {//and (orientation: portrait) {
+
+    //VISIBLE NAVIGATION
+    .navigation-bar {
+        &__scroll {
+
+        }
+    }
+
+    .navbar {
+        padding-top: 0;
+        max-width: 99%;
+        margin: 0 auto;
+        display: inline-block;
+        &__icon {
+            padding-top: 0;
+            //float: left;
+            border-right: none;
+            border-bottom: 2px solid $fuschia;
+            max-width: 20%;
+            margin-bottom: 0;
+            padding-right: 5%;
+        }
+        &__description {
+            display: none;
+        }
+        &__item {
+            display: inline-block;
+        }
+    }
+
+
+
+    //DROPDOWN MENU
+    .dropdown-area {
+
+        &__button {
+
+        }
+        &__how2play-button {
+
+        }
+    }
+
+    .dropdown {
+
+        &__listitem {
+
+        }
+    }
+
+
+
+    //HEADER
+    .header {
+        box-sizing: border-box;
+        &__logo {
+            //display: none;
+        }
+        &__name {
+        }
+        &__icon {
+            float: right;
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            &:after {
+                clear: both;
+            }
+        }
+    }
+
+    .line {
+
+    }
+
+
+
+
+    //SECTION: HEAD (WITH GAME)
+    .head {
+        @include mobile-paddings;
+        &__how2play-button {
+
+        }
+    }
+
+    .game {
+        margin-top: 20px;
+        &__item {
+
+        }
+    }
+
+
+
+
+    //SECTION: INSTRUCTIONS
+    .instructions-content {
+        @include mobile-paddings;
+        &__paragraph {
+
+        }
+    }
+
+
+
+
+    //SECTION: ABOUT
+    .about-me {
+        @include mobile-paddings;
+        &__name {
+            margin-top: 20px;
+        }
+        &__photo {
+
+        }
+        &__content {
+
+        }
+
+    }
+
+
+
+    //SECTION: PROJECTS
+    .my-projects {
+        @include mobile-paddings;
+        &__name {
+            margin-top: 20px;
+        }
+    }
+
+    .projects-list {
+        @include mobile-paddings;
+        &__item {
+
+        }
+        &__photo {
+
+        }
+        &__description {
+
+        }
+    }
+
+
+
+    //SECTION: SKILLS
+    .skills {
+        @include mobile-paddings;
+        &__name {
+            margin-top: 20px;
+        }
+        &__description {
+
+        }
+    }
+
+    .list-of-skills {
+
+        &__item {
+
+        }
+        &__description {
+
+        }
+        &__icon {
+
+        }
+
+    }
+
+
+
+    //SECTION: CONTACT
+    .contact-site {
+        @include mobile-paddings;
+        &__name {
+            margin-top: 20px;
+        }
+    }
+
+    .contact-form {
+        &__name {
+
+        }
+        &__mail {
+
+        }
+        &__message {
+
+        }
+        &__btn {
+
+        }
+    }
+
+
+
+    //SCROLL
+    .navigation-scroll {
+        text-align: center;
+        &__button {
+            
+        }
+    }
+
+
+
+    //FOOTER
+    .footer {
+         
+        &__content {
+           position: relative;
+            text-align: center; 
+        }
+    }
+}
