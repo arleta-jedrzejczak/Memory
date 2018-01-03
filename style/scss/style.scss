@@ -34,7 +34,7 @@ $vermillion: #fc4a1a;
     text-align: center;
     font-size: 30px;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 @mixin section-size {
@@ -77,6 +77,7 @@ main {
 //VISIBLE NAVIGATION
 .navigation-bar {
     flex-grow: 3;
+    margin-top: 40px;
 }
 
 .navbar {
@@ -111,11 +112,14 @@ main {
         }
     }
     &__description {
-        //visibility: hidden;
         display: block;
         margin-left: 100px;
         padding-left: 20px;
     }
+}
+
+.navbardescription {
+    visibility: hidden;
 }
 
 
@@ -125,7 +129,7 @@ main {
 }
 
 .menuIcon {
-    display: none;
+   display: none;
 }
 
 .cancelIcon {
@@ -133,6 +137,16 @@ main {
 }
 
 //DROPDOWN MENU
+
+.dropdown-navigation {
+    &__on {
+        margin-left: 10px;
+    }
+    &__off {
+
+    }
+}
+
 .dropdown-area {
     display: flex;
     flex-direction: column;
@@ -217,6 +231,7 @@ main {
 
 //SECTION: HEAD (WITH GAME)
 .head {
+    @include section-size;
     display: flex;
     flex-direction: column;
     flex-basis: 90%;
@@ -246,7 +261,7 @@ main {
         margin: 10px;
         width: 20%;
         min-height: 100px;
-        max-width: 100px;
+        min-width: 100px;
         cursor: pointer;
         filter: brightness(70%);
         transition: all .3s ease-in-out;
@@ -255,6 +270,10 @@ main {
         }
         &:before {
         }
+    }
+    &__counter {
+        display: block;
+        width: 100%;
     }
 }
 

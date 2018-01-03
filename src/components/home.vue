@@ -9,8 +9,7 @@
         v-bind:class="{checked: card.checked, passive: card.passive}"
         >
         </div>
-        <p>Turn counter: {{ turnCounter }}</p>
-        <p>{{ test }}</p>
+        <p class="game__counter">Turn counter: {{ turnCounter }}</p>
     </div>
     <div v-bind:class="{secret: secret}">
         <div class="button"  v-on:click="secret = !secret, hidden = !hidden">BACK TO GAME</div>
@@ -26,11 +25,6 @@
 
 <script>
 export default {
-    props: {
-        test: {
-            type: String
-        }
-    },
     data () {
         return {
             firstCardLink: '',

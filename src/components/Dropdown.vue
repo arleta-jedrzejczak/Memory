@@ -1,7 +1,7 @@
 <template>
-    <div>
-    <i class="demo-icon icon-menu" v-on:click="visibleDropdown = false, menuIcon = true, cancelIcon = false" v-bind:class="{menuIcon: menuIcon}"></i>
-    <i class="demo-icon icon-cancel" v-on:click="visibleDropdown = true, menuIcon = false, cancelIcon = true" v-bind:class="{cancelIcon: cancelIcon}"></i>
+    <div class="dropdown-navigation">
+    <i class="demo-icon icon-menu dropdown-navigation__on" v-on:click="visibleDropdown = false, menuIcon = true, cancelIcon = false" v-bind:class="{menuIcon: menuIcon}"></i>
+    <i class="demo-icon icon-cancel dropdown-navigation__off" v-on:click="visibleDropdown = true, menuIcon = false, cancelIcon = true" v-bind:class="{cancelIcon: cancelIcon}"></i>
     <div v-bind:class="{visibleDropdown: visibleDropdown}">
         <nav id="dropdownMenu" class="dropdown-area">
             <div class="dropdown-area__button">
