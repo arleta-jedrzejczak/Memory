@@ -18,9 +18,9 @@
     <div v-bind:class="{end: end}">
         <p>You won in {{ turnCounter }} turns!</p>
     </div>
-    <a href="#instructions" class="head__how2play-button">
+    <div class="head__how2play-button" v-bind:class="{hidden: hidden}">
         <p>HOW TO PLAY?</p>
-    </a>
+    </div>
     </section>
 </template>
 

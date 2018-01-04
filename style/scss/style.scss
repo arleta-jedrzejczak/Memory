@@ -160,7 +160,13 @@ main {
 
 //DROPDOWN MENU
 
+.dropdown {
+    display: inline-block;
+}
+
 .dropdown-navigation {
+    display: inline-flex;
+    width: 30px;
     &__on {
         margin-left: 10px;
         transition: all .3s ease-in-out;
@@ -179,22 +185,10 @@ main {
 
 .menuIconText {
     visibility: hidden;
-    opacity: 0;
-    -webkit-animation: 0.5s 1 visibiling;
-    animation: 0.5s 1 visibiling;
-    &Navigation {
-        visibility: visible;
-    }
 }
 
 .cancelIconText {
     visibility: hidden;
-    opacity: 0;
-    -webkit-animation: 0.5s 1 visibiling;
-    animation: 0.5s 1 visibiling;
-    &Navigation {
-        visibility: visible;
-    }
 }
 
 .dropdown-area {
@@ -278,16 +272,6 @@ main {
         }
     }
 }
-
-.line {
-     margin-top: 0;
-     height: 12px;
-     border: 0;
-     -moz-box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
-     -webkit-box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
-     box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
-}
-
 
 
 
