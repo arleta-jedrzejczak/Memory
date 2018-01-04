@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Oxygen');
-@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Vollkorn+SC');
 
 $void: #0E0B16;
 $fuschia: #A239CA;
@@ -89,8 +89,11 @@ main {
     justify-content: space-between;
     &__item {
         cursor: pointer;
+        transition: all .3s ease-in-out;
         &:hover {
             @include button--hover();
+            transform: scale(1.05);
+            filter: brightness(120%);
         }
     }
     &__link {
@@ -118,8 +121,27 @@ main {
     }
 }
 
+@keyframes visibiling {
+    0% {opacity: 1; filter: alpha(opacity=0);}
+    50% {opacity: 1; filter: alpha(opacity=50);}
+    100% {opacity: 0; filter: alpha(opacity=100);}
+}
+
+@-webkit-keyframes visibiling {
+    0% {opacity: 1; filter: alpha(opacity=0);}
+    50% {opacity: 1; filter: alpha(opacity=50);}
+    100% {opacity: 0; filter: alpha(opacity=100);}
+}
+
 .navbardescription {
     visibility: hidden;
+    opacity: 0;
+    -webkit-animation: 0.5s 1 visibiling;
+    animation: 0.5s 1 visibiling;
+}
+
+.navdescription {
+    visibility: visible;
 }
 
 
@@ -141,9 +163,37 @@ main {
 .dropdown-navigation {
     &__on {
         margin-left: 10px;
+        transition: all .3s ease-in-out;
+        &:hover {
+            filter: brightness(120%);
+            cursor: pointer;
+        }
     }
     &__off {
+        &:hover {
+            filter: brightness(120%);
+            cursor: pointer;
+        }
+    }
+}
 
+.menuIconText {
+    visibility: hidden;
+    opacity: 0;
+    -webkit-animation: 0.5s 1 visibiling;
+    animation: 0.5s 1 visibiling;
+    &Navigation {
+        visibility: visible;
+    }
+}
+
+.cancelIconText {
+    visibility: hidden;
+    opacity: 0;
+    -webkit-animation: 0.5s 1 visibiling;
+    animation: 0.5s 1 visibiling;
+    &Navigation {
+        visibility: visible;
     }
 }
 
@@ -151,7 +201,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 400px;
+    height: 500px;
     background-color: $fuschia;
     &__button {
         background-color: $void;
@@ -171,9 +221,11 @@ main {
 }
 
 .dropdown {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: start;
     &__listitem {
         @include button;
         &:hover {
@@ -181,7 +233,7 @@ main {
         }
     }
     &__icon {
-
+        display: inline;
     }
     &__description {
 
@@ -195,22 +247,32 @@ main {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-right: 10px;
+    padding-right: 10px;
+    margin-top: 10px;
+    background: #2E1733;
+    margin-bottom: 10px;
     &__logo {
-        flex-grow: 2;
         margin: 10px;
+        &--size:before {
+            font-size: 250%;
+        }
     }
     &__name {
         font-size: 200%;
         flex-grow: 6;
         word-break: keep-all;
         white-space: nowrap;
-        font-family: 'Lobster', cursive;
+        font-family: 'Vollkorn SC', serif;
         margin: 10px;
     }
     &__icon {
         color: $stark;
         flex-grow: 4;
+        transition: all .3s ease-in-out;
+        &:hover {
+            transform: scale(1.1);
+            filter: brightness(120%);
+        }
         &--size:before {
             font-size: 250%;
         }
@@ -237,6 +299,8 @@ main {
     flex-basis: 90%;
     justify-content: space-between;
     &__how2play-button {
+        margin-top: 20px;
+        margin-right: 20px;
         align-self: flex-end;
         background-color: $fuschia;
         @include button;
@@ -256,6 +320,8 @@ main {
     margin: 0 auto;
     &__card {
         font-size: 300%;
+        text-align: center;
+        padding-top: 5%;
         border: 3px solid $vermillion;
         border-radius: 5px;
         margin: 10px;
@@ -263,15 +329,16 @@ main {
         min-height: 100px;
         min-width: 100px;
         cursor: pointer;
-        filter: brightness(70%);
         transition: all .3s ease-in-out;
         &:hover {
-            filter: brightness(100%);
+            filter: brightness(120%);
+            transform: scale(1.05);
         }
         &:before {
         }
     }
     &__counter {
+        margin-top: 20px;
         display: block;
         width: 100%;
     }
@@ -297,17 +364,20 @@ main {
 
 //CARDS
 .checked {
-    color: $vermillion;
-    background-color: $vermillion;
+    filter: brightness(70%);
+    font-size: 0;
+    background: linear-gradient(70deg, $fuschia, $void, $jewel, $stark);
     border-color: $stark;
 }
 
 .passive {
+    filter: brightness(50%); 
     cursor: initial;
-    background-color: gray;
+    background: linear-gradient(70deg, black, gray);
     border-color: darkslategrey;
     &:hover {
-        filter: brightness(70%);
+        filter: brightness(50%);
+        transform: scale(1)
     }
 }
 
@@ -444,7 +514,7 @@ main {
     &__content {
         padding-right: 10px;
         display: inline-flex;
-        font-family: 'Lobster', cursive;
+        font-family: 'Vollkorn SC', serif;
 
     }
 }

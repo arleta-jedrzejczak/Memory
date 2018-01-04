@@ -6,13 +6,13 @@
             <li
             class="navbar__item"
             v-on:click="changeComponent(item, items)"
-            v-on:mouseover="item.navbardescription = false"
-            v-on:mouseout="item.navbardescription = true"
+            v-on:mouseover="item.navbardescription = false, item.navdescription = false"
+            v-on:mouseout="item.navbardescription = true, item.navdescription = true"
             v-for="item in items"
             v-bind:key="item.id">
                     <div class="navbar__icon" v-html="item.link">
                     </div>
-                    <p class="navbar__description" v-bind:class="{navbardescription: item.navbardescription}">{{ item.description }}</p>
+                    <p class="navbar__description" v-bind:class="{navbardescription: item.navbardescription, navdescription: item.navdescription}">{{ item.description }}</p>
             </li>
         </ul>
     </nav>
@@ -41,7 +41,7 @@ export default {
   },
   methods: {
       changeComponent: function(item, items) {
-          var vm = this;
+          const vm = this;
           this.$emit('changeComponent', item.description );
       }
   }

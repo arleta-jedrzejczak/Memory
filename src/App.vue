@@ -2,6 +2,7 @@
   <div class="grid">
     <dropdown v-bind:component='component' v-on:changeComponent="updateComponent($event)"/>
     <navbar v-bind:component='component' v-on:changeComponent="updateComponent($event)"/>
+    <instructions />
     <keep-alive>
       <component v-bind:is="component" v-on:changeComponent="updateComponent($event)"/>
     </keep-alive>
@@ -17,6 +18,7 @@ import About from './components/About.vue'
 import Projects from './components/Projects.vue'
 import Skills from './components/Skills.vue'
 import Dropdown from './components/Dropdown.vue'
+import Instructions from './components/Instructions.vue'
 
 export default {
   components: {
@@ -26,7 +28,8 @@ export default {
     'About': About,
     'Projects': Projects,
     'Skills': Skills,
-    'Dropdown': Dropdown
+    'Dropdown': Dropdown,
+    'Instructions': Instructions
   },
   data () {
     return {

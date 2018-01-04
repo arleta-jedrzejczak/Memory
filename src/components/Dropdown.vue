@@ -1,12 +1,25 @@
 <template>
     <div class="dropdown-navigation">
-    <i class="demo-icon icon-menu dropdown-navigation__on" v-on:click="visibleDropdown = false, menuIcon = true, cancelIcon = false" v-bind:class="{menuIcon: menuIcon}"></i>
-    <i class="demo-icon icon-cancel dropdown-navigation__off" v-on:click="visibleDropdown = true, menuIcon = false, cancelIcon = true" v-bind:class="{cancelIcon: cancelIcon}"></i>
+    <i class="demo-icon icon-menu dropdown-navigation__on"
+        v-on:mouseover="menuIconText = false, menuIconTextAnimation = false"
+        v-on:mouseout="menuIconText = true, menuIconTextAnimation = true"
+        v-on:click="visibleDropdown = false, menuIcon = true, cancelIcon = false" 
+        v-bind:class="{menuIcon: menuIcon}"></i>
+    <p v-bind:class="{menuIconText: menuIconText, menuIconTextAnimation: menuIconTextAnimation}">Menu</p>
+    <i class="demo-icon icon-cancel dropdown-navigation__off" 
+        v-on:click="visibleDropdown = true, menuIcon = false, cancelIcon = true" 
+        v-bind:class="{cancelIcon: cancelIcon}"
+        v-on:mouseover="cancelIconText = false, cancelIconTextAnimation = false"
+        v-on:mouseout="cancelIconText = true, cancelIconTextAnimation = true"></i>
+    <p v-bind:class="{cancelIconText: cancelIconText, cancelIconTextAnimation: cancelIconTextAnimation}">Exit menu</p>
     <div v-bind:class="{visibleDropdown: visibleDropdown}">
         <nav id="dropdownMenu" class="dropdown-area">
             <div class="dropdown-area__button">
                 <p>Color settings</p>
             </div>
+            <div href="#instructions" class="dropdown-area__how2play-button">
+                <p>HOW TO PLAY?</p>
+            </div> 
             <ul class="dropdown">
                 <li
                 class="dropdown__listitem"
@@ -16,11 +29,8 @@
                         <div class="dropdown__icon" v-html="item.link"></div>
                         <p class="dropdown__description">{{ item.description }}</p>
                 </li>
-            </ul> 
-            <div href="#instructions" class="dropdown-area__how2play-button">
-                <p>HOW TO PLAY?</p>
-            </div>      
-        </nav>
+            </ul>     
+        </nav> 
     </div> 
     </div>   
 </template>
@@ -34,6 +44,10 @@ export default {
   },
   data () {
     return {
+        cancelIconText: true,
+        menuIconText: true,
+        menuIconTextAnimation: true,
+        cancelIconTextAnimation: true,
         items: [
             { id: 0, text: '<a href="#home" class="navbar__link"></a>', link: '<i class="demo-icon icon-home navbar__icon--size"></i>', description: 'Home' },
             { id: 1, text: '<a href="#about" class="navbar__link"></a>', link: '<i class="demo-icon icon-user navbar__icon--size"></i>', description: 'About' },

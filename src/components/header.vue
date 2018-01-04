@@ -1,7 +1,9 @@
 <template>
 <div>
     <header class="header">
-                <i class="demo-icon icon-code"></i>
+        <div class="header__logo">
+                <i class="demo-icon icon-code header__logo--size"></i>
+                </div>
                 <h1 class="header__name">{{ header_name }}</h1>
                 <a v-bind:href="github_link" target="_blank">
                     <div class="header__icon">
@@ -14,8 +16,7 @@
                     </div>
                 </a>
             </header>
-        <hr class="line"/>
-</div>
+        </div>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <section class="head">
     <div class="game" v-bind:class="{hidden: hidden}">
         <div class="game__card"
         v-on:click="switchCard(card, cards)"
@@ -18,7 +18,10 @@
     <div v-bind:class="{end: end}">
         <p>You won in {{ turnCounter }} turns!</p>
     </div>
-    </div>
+    <a href="#instructions" class="head__how2play-button">
+        <p>HOW TO PLAY?</p>
+    </a>
+    </section>
 </template>
 
 //v-on:DOMContentLoaded="randomList"
