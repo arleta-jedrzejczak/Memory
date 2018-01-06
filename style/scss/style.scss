@@ -44,6 +44,20 @@ $vermillion: #fc4a1a;
     margin: 10px;
 }
 
+//KEYFRAMES
+
+@keyframes visibiling {
+    0% {opacity: 1; filter: alpha(opacity=0);}
+    50% {opacity: 1; filter: alpha(opacity=50);}
+    100% {opacity: 0; filter: alpha(opacity=100);}
+}
+
+@-webkit-keyframes visibiling {
+    0% {opacity: 1; filter: alpha(opacity=0);}
+    50% {opacity: 1; filter: alpha(opacity=50);}
+    100% {opacity: 0; filter: alpha(opacity=100);}
+}
+
 html, body {
     height: 100%;
 }
@@ -75,9 +89,29 @@ main {
 
 
 //VISIBLE NAVIGATION
+
 .navigation-bar {
     flex-grow: 3;
-    margin-top: 40px;
+    margin-top: 10px;
+    &__switch {
+        margin-left: 10px;
+        font-size: 100%;
+        cursor: pointer;
+        display: inline-flex;
+        margin-bottom: 10px;
+        transition: all .3s ease-in-out;
+        &:hover {
+            filter: brightness(120%);
+        }
+        &--text {
+            font-size: 80%;
+        }
+    }
+}
+
+//Vue toggler's class => appearing 'menu' word
+.menuIconText {
+    visibility: hidden;
 }
 
 .navbar {
@@ -95,9 +129,6 @@ main {
             transform: scale(1.05);
             filter: brightness(120%);
         }
-    }
-    &__link {
-        @include button--hover();
     }
     &__icon {
         border-right: 2px solid $fuschia;
@@ -121,18 +152,7 @@ main {
     }
 }
 
-@keyframes visibiling {
-    0% {opacity: 1; filter: alpha(opacity=0);}
-    50% {opacity: 1; filter: alpha(opacity=50);}
-    100% {opacity: 0; filter: alpha(opacity=100);}
-}
-
-@-webkit-keyframes visibiling {
-    0% {opacity: 1; filter: alpha(opacity=0);}
-    50% {opacity: 1; filter: alpha(opacity=50);}
-    100% {opacity: 0; filter: alpha(opacity=100);}
-}
-
+//Vue toggler's class => appearing component's names
 .navbardescription {
     visibility: hidden;
     opacity: 0;
@@ -140,98 +160,9 @@ main {
     animation: 0.5s 1 visibiling;
 }
 
+//Vue toggler's class => appearing component's names (for slowly appear)
 .navdescription {
     visibility: visible;
-}
-
-
-//DROPDOWN VISIBLE
-.visibleDropdown {
-    display: none;
-}
-
-.menuIcon {
-   display: none;
-}
-
-.cancelIcon {
-    display: none;
-}
-
-//DROPDOWN MENU
-
-.dropdown {
-    display: inline-block;
-}
-
-.dropdown-navigation {
-    display: inline-flex;
-    width: 30px;
-    &__on {
-        margin-left: 10px;
-        transition: all .3s ease-in-out;
-        &:hover {
-            filter: brightness(120%);
-            cursor: pointer;
-        }
-    }
-    &__off {
-        &:hover {
-            filter: brightness(120%);
-            cursor: pointer;
-        }
-    }
-}
-
-.menuIconText {
-    visibility: hidden;
-}
-
-.cancelIconText {
-    visibility: hidden;
-}
-
-.dropdown-area {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 500px;
-    background-color: $fuschia;
-    &__button {
-        background-color: $void;
-        @include button--hover();
-        &:hover {
-            @include button--hover;
-        }
-    }
-    &__how2play-button {
-        background-color: $void;
-        @include button;
-        &:hover {
-            @include button--hover;
-            background-color: $fuschia;
-        }
-    }
-}
-
-.dropdown {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: start;
-    &__listitem {
-        @include button;
-        &:hover {
-           @include button--hover; 
-        }
-    }
-    &__icon {
-        display: inline;
-    }
-    &__description {
-
-    }
 }
 
 
@@ -315,6 +246,10 @@ main {
         cursor: pointer;
         transition: all .3s ease-in-out;
         &:hover {
+            filter: brightness(120%);
+            transform: scale(1.05);
+        }
+        &:active {
             filter: brightness(120%);
             transform: scale(1.05);
         }

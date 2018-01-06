@@ -65,6 +65,10 @@ export default {
 
             var vm = this;
 
+            var flipCard = function() {
+                card.checked = false;
+            }
+
             var changeCardFalse = function() { //cards don't match
                 vm.cards[vm.firstCardId].checked = true;
                 card.checked = true;
@@ -100,7 +104,7 @@ export default {
             if(vm.lock === false) {
                 vm.lock = true;
                 if(card.passive === false){
-                card.checked = false;
+                    setTimeout(flipCard, 500);
                     if(vm.oneVisible === false) { //first card chosen
                         vm.oneVisible = true;
                         vm.firstCardProperty = card.property;
