@@ -3,7 +3,7 @@
     <navbar v-bind:component='component' v-on:changeComponent="updateComponent($event)"/>
     <instructions />
     <keep-alive>
-      <component v-bind:is="component" v-on:changeComponent="updateComponent($event)"/>
+      <component v-bind:firstCardLink="firstCardLink" v-bind:is="component" v-on:changeComponent="updateComponent($event)" v-on:sendLink="updateLink($event)"/>
     </keep-alive>
   </div>
 </template>
@@ -17,6 +17,7 @@ import About from './components/About.vue'
 import Projects from './components/Projects.vue'
 import Skills from './components/Skills.vue'
 import Instructions from './components/Instructions.vue'
+import Links from './components/Links.vue'
 
 export default {
   components: {
@@ -26,16 +27,21 @@ export default {
     'About': About,
     'Projects': Projects,
     'Skills': Skills,
-    'Instructions': Instructions
+    'Instructions': Instructions,
+    'Links': Links
   },
   data () {
     return {
-      component: 'Home'
+      component: 'Home',
+      firstCardLink: ''
     }
   },
   methods: {
     updateComponent: function(updatedComponent) {
       this.component = updatedComponent;
+    },
+    updateLink: function(updatedLink) {
+      this.firstCardLink = updatedLink;
     }
   }
 }

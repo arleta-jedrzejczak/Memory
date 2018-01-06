@@ -263,18 +263,6 @@ main {
     }
 }
 
-//GAMEBOARD
-.hidden {
-    display: none;
-}
-
-.secret {
-    display: none;
-}
-
-.end {
-    display: none;
-}
 
 .button {
     @include button;

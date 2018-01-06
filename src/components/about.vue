@@ -7,6 +7,7 @@
             <p>{{ description }}</p>
         </article>
     </div>
+    <buton v-on:click="changeComponent">Back to the game</buton>
   </section>
 </template>
 
@@ -21,6 +22,12 @@ export default {
       description: 'Nullam commodo mollis enim luctus dictum. Morbi at laoreet est. Integer blandit nulla ullamcorper augue accumsan, sed condimentum orci venenatis. In finibus sem neque, nec tincidunt nisl laoreet vitae. Donec vel auctor tellus, vel sollicitudin est. Integer vehicula sit amet libero eu venenatis. Nam tortor nisl, ultrices sed ligula id, malesuada laoreet arcu.'
       
     }
+  },
+  methods: {
+    changeComponent: function(firstCardProperty) {
+          var vm = this;
+          this.$emit('changeComponent', 'Home');
+        },
   }
 }
 </script>
