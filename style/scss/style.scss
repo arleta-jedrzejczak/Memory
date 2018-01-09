@@ -6,6 +6,8 @@ $fuschia: #A239CA;
 $jewel: #4717F6;
 $stark: #E7DFDD;
 $vermillion: #fc4a1a;
+$plum: #2E1733;
+
 
 
 //MIXINS
@@ -38,10 +40,18 @@ $vermillion: #fc4a1a;
 }
 
 @mixin section-size {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    margin: 10px;
+    box-sizing: border-box;
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 100%;
+}
+
+@mixin fontello {
+    font-family: fontello;
+    position: absolute;
+    top: 11px;
+    left: -30px;
+    transition: all 200ms ease;
 }
 
 //KEYFRAMES
@@ -75,30 +85,65 @@ body {
     flex: 1 0 auto;
 }
 
+
+
+//HEADER
+.header {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1%;
+    margin-top: 1%;
+    background: $plum;
+    margin-bottom: 1%;
+    &__logo {
+        &--size:before {
+            font-size: 250%;
+        }
+    }
+    &__name {
+        padding-left: 1%;
+        padding-right: 1%;
+        font-size: 200%;
+        flex-grow: 6;
+        word-break: keep-all;
+        white-space: nowrap;
+        font-family: 'Vollkorn SC', serif;
+    }
+    &__icon {
+        color: $stark;
+        flex-grow: 4;
+        transition: all .3s ease-in-out;
+        &:hover {
+            transform: scale(1.1);
+            filter: brightness(120%);
+        }
+        &--size:before {
+            font-size: 250%;
+        }
+    }
+}
+
+
 .grid {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-main {
-    padding-right: 30px;
-    flex-grow: 9;
-    max-width: 70%;
-}
 
 
 //VISIBLE NAVIGATION
 
 .navigation-bar {
-    flex-grow: 3;
-    margin-top: 10px;
+    margin-top: 1%;
     &__switch {
-        margin-left: 10px;
+        margin-left: 1%;
         font-size: 100%;
         cursor: pointer;
         display: inline-flex;
-        margin-bottom: 10px;
+        margin-bottom: 1%;
         transition: all .3s ease-in-out;
         &:hover {
             filter: brightness(120%);
@@ -167,43 +212,138 @@ main {
 
 
 
-//HEADER
-.header {
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width:100%;
+    align-content: center;
+}
+
+
+//SECTION: BUTTONS
+.buttons {
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    padding-right: 10px;
-    margin-top: 10px;
-    background: #2E1733;
-    margin-bottom: 10px;
-    &__logo {
-        margin: 10px;
-        &--size:before {
-            font-size: 250%;
-        }
-    }
-    &__name {
-        font-size: 200%;
-        flex-grow: 6;
-        word-break: keep-all;
-        white-space: nowrap;
-        font-family: 'Vollkorn SC', serif;
-        margin: 10px;
-    }
-    &__icon {
-        color: $stark;
-        flex-grow: 4;
+    justify-content: flex-end;
+    padding: 1%;
+    &__button {
+        overflow: hidden;
         transition: all .3s ease-in-out;
-        &:hover {
-            transform: scale(1.1);
-            filter: brightness(120%);
+        margin-left: 1%;
+        margin-right: 1%;
+        border: none;
+        background-color: $plum;
+        @include button;
+        -moz-box-shadow: 1px 1px 1px $stark;
+        -webkit-box-shadow:  1px 1px 1px $stark;
+        box-shadow:  1px 1px 1px $stark;
+        &--back {
+            background-color: $fuschia;
+            &:before {
+                content: '\e803';
+                @include fontello;
+            }
         }
-        &--size:before {
-            font-size: 250%;
+        &--info {
+            background-color: $jewel;
+            &:before {
+                content: '\f0c9';
+                @include fontello;
+            }
+        }
+        &--link {
+            text-decoration: none;
+            color: $stark;
+        }
+        &--github {
+            &:before {
+                content: '\f09b';
+                @include fontello;
+            }
+        }
+        &--linkedin {
+            &:before {
+                content: '\f0e1';
+                @include fontello;
+            }
+        }
+        &:hover {
+            @include button--hover;
+            filter: brightness(120%);
+            transform: scale(1.05);
+            //border: 1px solid $stark;
+            -moz-box-shadow: none;
+            -webkit-box-shadow:  none;
+            box-shadow:  none;
+            &:before {
+                left: 12px;
+            }
+        }
+        &:active {
+            @include button--hover;
+            filter: brightness(120%);
+            transform: scale(1.05);
+            border: 1px solid $stark;
+            -moz-box-shadow: none;
+            -webkit-box-shadow:  none;
+            box-shadow:  none;
+            &:before {
+                left: 12px;
+            }
+        }
+        &--end {
+            background-color: $stark;
+            color: $void;
+            -moz-box-shadow: 1px 1px 1px $vermillion;
+            -webkit-box-shadow:  1px 1px 1px $vermillion;
+            box-shadow:  1px 1px 1px $vermillion;
+            &:before {
+                content: '\e804';
+                @include fontello;
+            }
+            &:hover {
+                color: $void;
+            }
+        }
+        &--restart {
+            font-weight: 600;
+            &:hover {
+                border: 1px solid $stark;
+                color: $stark;
+                &::before {
+                    color: $stark;
+                }
+            }
+            &:before {
+                color: $stark;
+            }
         }
     }
 }
 
+//Vue toggler's class => appearing and change buttons
+.back {
+    visibility: hidden;
+}
+.info {
+    visibility: hidden;
+}
+.github {
+    visibility: hidden;
+}
+.linkedin {
+    visibility: hidden;
+}
+.restart {
+    background-color: $vermillion;
+    color: $stark;
+    filter: brightness(120%);
+    -moz-box-shadow: 1px 1px 1px $stark;
+    -webkit-box-shadow:  1px 1px 1px $stark;
+    box-shadow:  1px 1px 1px $stark;
+}
 
 
 //SECTION: HEAD (WITH GAME)
@@ -211,19 +351,8 @@ main {
     @include section-size;
     display: flex;
     flex-direction: column;
-    flex-basis: 90%;
     justify-content: space-between;
-    &__how2play-button {
-        margin-top: 20px;
-        margin-right: 20px;
-        align-self: flex-end;
-        background-color: $fuschia;
-        @include button;
-        &:hover {
-            @include button--hover;
-            background-color: $jewel;
-        }
-    }
+    align-content: center;
 }
 
 .game {
@@ -259,15 +388,10 @@ main {
     &__counter {
         margin-top: 20px;
         display: block;
-        width: 100%;
     }
 }
 
 
-.button {
-    @include button;
-    background-color: $vermillion;
-}
 
 //CARDS
 .checked {
@@ -306,19 +430,18 @@ main {
     @include section-size;
     &__name {
         @include header2;
+    }
 }
 
-.about-me {
+.allabout {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    }
     &__photo {
-        margin-right: 10px;
-        border: 1px solid black;
+        border: 1px solid $stark;
     }
     &__content {
-        margin-left: 10px;
+        margin-left: 3%;
     }
 }
 
@@ -334,11 +457,13 @@ main {
 }
 
 .projects-list {
-    flex-wrap: wrap;
     list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: space-between;
     &__item {
-        flex-wrap: wrap;
-        max-width: 45%;
+    width: 45%;
     }
     &__photo {
 

@@ -11,15 +11,6 @@
         </div>
         <p class="game__counter">Turn counter: {{ turnCounter }}</p>
     </div>
-    <div>
-        <div class="button" id="link" v-on:click="changeComponent(firstCardProperty)"></div>
-    </div>
-    <div>
-        <p>You won in {{ turnCounter }} turns!</p>
-    </div>
-    <div class="head__how2play-button">
-        <p>HOW TO PLAY?</p>
-    </div>
     </section>
 </template>
 
@@ -29,7 +20,6 @@
 export default {
     data () {
         return {
-            firstCardLink: '',
             firstCardProperty: '',
             firstCardId: '',
             lock: false,
@@ -37,29 +27,37 @@ export default {
             pairs: 6,
             oneVisible: false,
             cards: [
-                { id: 0, text: '<i class="demo-icon icon-user"></i>', checked: true, property: 'About', passive: false, flipped: false },
-                { id: 1, text: '<i class="demo-icon icon-user"></i>', checked: true, property: 'About', passive: false, flipped: false },
-                { id: 2, text: '<i class="demo-icon icon-file-code"></i>', checked: true, property: 'Projects', passive: false, flipped: false },
-                { id: 3, text: '<i class="demo-icon icon-file-code"></i>', checked: true, property: 'Projects', passive: false, flipped: false },
-                { id: 4, text: '<i class="demo-icon icon-cog-alt"></i>', checked: true, property: 'Skills', passive: false, flipped: false },
-                { id: 5, text: '<i class="demo-icon icon-cog-alt"></i>', checked: true, property: 'Skills', passive: false, flipped: false },
-                { id: 6, text: '<i class="demo-icon icon-mail"></i>', checked: true, property: 'Contact', passive: false, flipped: false },
-                { id: 7, text: '<i class="demo-icon icon-mail"></i>', checked: true, property: 'Contact', passive: false, flipped: false },
-                { id: 8, text: '<i class="demo-icon icon-github-circled"></i>', checked: true, property: 'github', passive: false, link: '<a href="https://github.com/laililang" target="_blank">Go to my GitHub</a>', flipped: false },
-                { id: 9, text: '<i class="demo-icon icon-github-circled"></i>', checked: true, property: 'github', passive: false, link: '<a href="https://github.com/laililang" target="_blank">Go to my GitHub</a>', flipped: false },
-                { id: 10, text: '<i class="demo-icon icon-linkedin"></i>', checked: true, property: 'linkedin', passive: false, link: '<a href="https://pl.linkedin.com/in/arleta-j%C4%99drzejczak-167345147" target="_blank">Go to my LinkedIn</a>', flipped: false },
-                { id: 11, text: '<i class="demo-icon icon-linkedin"></i>', checked: true, property: 'linkedin', passive: false, link: '<a href="https://pl.linkedin.com/in/arleta-j%C4%99drzejczak-167345147" target="_blank">Go to my LinkedIn</a>', flipped: false }
+                { id: 0, text: '<i class="demo-icon icon-user"></i>', checked: true, property: 'About', passive: false },
+                { id: 1, text: '<i class="demo-icon icon-user"></i>', checked: true, property: 'About', passive: false },
+                { id: 2, text: '<i class="demo-icon icon-file-code"></i>', checked: true, property: 'Projects', passive: false },
+                { id: 3, text: '<i class="demo-icon icon-file-code"></i>', checked: true, property: 'Projects', passive: false },
+                { id: 4, text: '<i class="demo-icon icon-cog-alt"></i>', checked: true, property: 'Skills', passive: false },
+                { id: 5, text: '<i class="demo-icon icon-cog-alt"></i>', checked: true, property: 'Skills', passive: false },
+                { id: 6, text: '<i class="demo-icon icon-mail"></i>', checked: true, property: 'Contact', passive: false },
+                { id: 7, text: '<i class="demo-icon icon-mail"></i>', checked: true, property: 'Contact', passive: false },
+                { id: 8, text: '<i class="demo-icon icon-github-circled"></i>', checked: true, property: 'github', passive: false, link: '<a href="https://github.com/laililang" target="_blank">Go to my GitHub</a>' },
+                { id: 9, text: '<i class="demo-icon icon-github-circled"></i>', checked: true, property: 'github', passive: false, link: '<a href="https://github.com/laililang" target="_blank">Go to my GitHub</a>' },
+                { id: 10, text: '<i class="demo-icon icon-linkedin"></i>', checked: true, property: 'linkedin', passive: false, link: '<a href="https://pl.linkedin.com/in/arleta-j%C4%99drzejczak-167345147" target="_blank">Go to my LinkedIn</a>' },
+                { id: 11, text: '<i class="demo-icon icon-linkedin"></i>', checked: true, property: 'linkedin', passive: false, link: '<a href="https://pl.linkedin.com/in/arleta-j%C4%99drzejczak-167345147" target="_blank">Go to my LinkedIn</a>' }
             ]
         }
     },
     methods: {
-        sendLink: function(firstCardLink) {
-          var vm = this;
-          this.$emit('sendLink', vm.firstCardLink);
+        winnerAlert: function(turnCounter) {
+            var vm = this;
+            this.$emit('winnerAlert', vm.turnCounter);
         },
         changeComponent: function(firstCardProperty) {
           var vm = this;
           this.$emit('changeComponent', vm.firstCardProperty);
+        },
+        changeGithub: function() {
+          var vm = this;
+          this.$emit('changeGithub', true);
+        },
+        changeLinked: function() {
+          var vm = this;
+          this.$emit('changeLinked', true);
         },
         switchCard: function(card, cards) {
 
@@ -67,7 +65,6 @@ export default {
 
             function flipCard() {
                 card.checked = false;
-                card.flipped = true;
             }
 
             function changeCardFalse() { //cards don't match
@@ -79,10 +76,11 @@ export default {
             function changeCardTrue() { //cards match
                 vm.cards[vm.firstCardId].passive = true;
                 card.passive = true;
-                if(vm.firstCardId > 7) { //GitHub and LinkedIn
-                    vm.firstCardProperty = 'Links';
-                    vm.changeComponent(vm.firstCardProperty);
-                    vm.sendLink(vm.firstCardLink);
+                if(vm.firstCardId > 7 && vm.firstCardId < 10) { //GitHub
+                    vm.changeGithub(true);
+                }
+                else if(vm.firstCardId > 9) { //LinedIn
+                    vm.changeLinked(true);
                 }
                 else { // other components
                     vm.changeComponent(vm.firstCardProperty);
@@ -90,7 +88,7 @@ export default {
                 vm.lock = false;
             }
 
-            if(vm.lock === false) {
+            if(vm.lock === false && card.checked === true) {
                 vm.lock = true;
                 if(card.passive === false){
                     setTimeout(flipCard, 250);
@@ -98,7 +96,6 @@ export default {
                         vm.oneVisible = true;
                         vm.firstCardProperty = card.property;
                         vm.firstCardId = card.id;
-                        vm.firstCardLink = card.link;
                         vm.lock = false;
                     }
                     else { //second card chosen
@@ -106,14 +103,11 @@ export default {
                             setTimeout(changeCardTrue, 750);
                             vm.pairs--;
                             if(vm.pairs === 0) {
-                                //score
+                                setTimeout(vm.winnerAlert, 2000);
                             }
                         }
                         else { //lack of similarity
                             setTimeout(changeCardFalse, 1000);
-                            //debug
-                            console.log(vm.firstCardId);
-                            console.log(vm.cards[vm.firstCardId]);
                         }
                         vm.turnCounter++;
                         vm.oneVisible = false;

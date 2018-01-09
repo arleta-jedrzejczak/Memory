@@ -1,10 +1,12 @@
 <template>
   <div class="grid">
     <navbar v-bind:component='component' v-on:changeComponent="updateComponent($event)"/>
-    <instructions />
-    <keep-alive>
-      <component v-bind:firstCardLink="firstCardLink" v-bind:is="component" v-on:changeComponent="updateComponent($event)" v-on:sendLink="updateLink($event)"/>
-    </keep-alive>
+    <main>
+      <buttons v-on:changeComponent="updateComponent($event)" v-bind:back="back" v-bind:github="github" v-bind:linked="linked" v-bind:turnCount="turnCount" v-bind:info="info" v-bind:end="end" v-bind:link="link" v-bind:turns="turns" v-bind:restart="restart"/>
+      <keep-alive>
+        <component v-bind:is="component" v-on:changeComponent="updateComponent($event)" v-on:changeGithub="updateGithub($event)" v-on:changeLinked="updateLinked($event)" v-on:winnerAlert="winnerTurns($event)"/>
+      </keep-alive>
+    </main>  
   </div>
 </template>
 
@@ -17,7 +19,7 @@ import About from './components/About.vue'
 import Projects from './components/Projects.vue'
 import Skills from './components/Skills.vue'
 import Instructions from './components/Instructions.vue'
-import Links from './components/Links.vue'
+import Buttons from './components/Buttons.vue'
 
 export default {
   components: {
@@ -28,20 +30,56 @@ export default {
     'Projects': Projects,
     'Skills': Skills,
     'Instructions': Instructions,
-    'Links': Links
+    'Buttons': Buttons
   },
   data () {
     return {
       component: 'Home',
-      firstCardLink: ''
+      turnCount: '',
+      linked: false,
+      github: false,
+      back: false,
+      info: true,
+      end: false,
+      link: 'You won in ',
+      turns: true,
+      restart: false
     }
   },
   methods: {
-    updateComponent: function(updatedComponent) {
-      this.component = updatedComponent;
+    newLink: function(link) {
+      const vm = this;
+      vm.link = '<span class="buttons__button--restart">RESTART GAME</span>';
+      vm.turns = false;
+      vm.restart = true;
     },
-    updateLink: function(updatedLink) {
-      this.firstCardLink = updatedLink;
+    updateComponent: function(updatedComponent) {
+      const vm = this;
+      vm.component = updatedComponent;
+      if(vm.component !== 'Home' && vm.component === "Instructions") {
+        vm.back = true;
+        vm.info = false;
+      }
+      else if(vm.component !== 'Home' && vm.component !== "Instructions") {
+        vm.back = true;
+        vm.info = true;
+      }
+      else if (vm.component === 'Home' && vm.component !== "Instructions") {
+        vm.back = false;
+        vm.info = true;
+      }
+    },
+    updateGithub: function() {
+      this.github = true;
+    },
+    updateLinked: function() {
+      this.linked = true;
+    },
+    winnerTurns: function(count) {
+      const vm = this;
+      vm.turnCount = count;
+      vm.end = true;
+      setTimeout(vm.newLink, 5000);
     }
   }
 }

@@ -9,7 +9,6 @@
                 <input class="contact-form__btn" type="submit" value="Send" tabindex="4" />
             </fieldset>
         </form>
-        <buton v-on:click="changeComponent">Back to the game</buton>
     </section>
 </template>
 
@@ -25,10 +24,6 @@ export default {
     }
   },
   methods: {
-    changeComponent: function(firstCardProperty) {
-          var vm = this;
-          this.$emit('changeComponent', 'Home');
-        },
   }
 }
 </script>
