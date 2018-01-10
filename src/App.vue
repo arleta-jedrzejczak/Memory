@@ -1,17 +1,21 @@
 <template>
+<div class="topper">
+<app-header v-on:changeComponent="updateComponent($event)"/>
   <div class="grid">
     <navbar v-bind:component='component' v-on:changeComponent="updateComponent($event)"/>
     <main>
       <buttons v-on:changeComponent="updateComponent($event)" v-bind:back="back" v-bind:github="github" v-bind:linked="linked" v-bind:turnCount="turnCount" v-bind:info="info" v-bind:end="end" v-bind:link="link" v-bind:turns="turns" v-bind:restart="restart"/>
       <keep-alive>
-        <component v-bind:is="component" v-on:changeComponent="updateComponent($event)" v-on:changeGithub="updateGithub($event)" v-on:changeLinked="updateLinked($event)" v-on:winnerAlert="winnerTurns($event)"/>
+        <component v-bind:is="component" v-bind:mail="mail" v-on:changeComponent="updateComponent($event)" v-on:changeGithub="updateGithub($event)" v-on:changeLinked="updateLinked($event)" v-on:winnerAlert="winnerTurns($event)"/>
       </keep-alive>
     </main>  
   </div>
+</div>
 </template>
 
 <script>
 
+import Header from './components/Header.vue'
 import Navbar from './components/Navbar.vue'
 import Home from './components/Home.vue'
 import Contact from './components/Contact.vue'
@@ -23,6 +27,7 @@ import Buttons from './components/Buttons.vue'
 
 export default {
   components: {
+    'app-header': Header,
     'Navbar': Navbar,
     'Home': Home,
     'Contact': Contact,
@@ -43,7 +48,8 @@ export default {
       end: false,
       link: 'You won in ',
       turns: true,
-      restart: false
+      restart: false,
+      mail: ''
     }
   },
   methods: {
@@ -59,6 +65,16 @@ export default {
       if(vm.component !== 'Home' && vm.component === "Instructions") {
         vm.back = true;
         vm.info = false;
+      }
+      else if(vm.component !== 'Home' && vm.component !== "Instructions" && vm.component == "Contact") {
+        vm.back = true;
+        vm.info = true;
+        const user = 'arleta.joanna.jedrzejczak';
+        const domain = 'gmail.com';
+        const subject = '?subject=Mail from portfolio';
+        const text = 'Send me an email';
+        const all = ('<a hr' + 'ef="mai' + 'lto:' + user + '\x40' + domain + subject + '">' + text + '<'+'/a>');
+        vm.mail = all;
       }
       else if(vm.component !== 'Home' && vm.component !== "Instructions") {
         vm.back = true;

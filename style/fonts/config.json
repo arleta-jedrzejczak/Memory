@@ -49,21 +49,39 @@
       "src": "fontawesome"
     },
     {
-      "uid": "559647a6f430b3aeadbecd67194451dd",
-      "css": "menu",
-      "code": 61641,
-      "src": "fontawesome"
-    },
-    {
       "uid": "7034e4d22866af82bef811f52fb1ba46",
       "css": "code",
       "code": 61729,
       "src": "fontawesome"
     },
     {
-      "uid": "5211af474d3a9848f67f945e2ccaf143",
-      "css": "cancel",
+      "uid": "f9c3205df26e7778abac86183aefdc99",
+      "css": "ccw",
       "code": 59396,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "f2aa28a2548ed3d2be718d087b65ee21",
+      "css": "key",
+      "code": 59397,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "33194d4a025fbf12baca54579afe4c8e",
+      "css": "at",
+      "code": 61946,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "51fb22f9ff9d7f60c95ef31e4c59502d",
+      "css": "comment",
+      "code": 62636,
+      "src": "mfglabs"
+    },
+    {
+      "uid": "9f7e588c66cfd6891f6f507cf6f6596b",
+      "css": "phone",
+      "code": 59398,
       "src": "fontawesome"
     }
   ]

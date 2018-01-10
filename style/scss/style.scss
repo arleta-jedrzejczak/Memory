@@ -33,13 +33,16 @@ $plum: #2E1733;
 }
 
 @mixin header2 {
-    text-align: center;
     font-size: 30px;
     font-weight: 600;
-    margin-bottom: 40px;
+    margin-bottom: 3%;
+    margin-top: 2%;
 }
 
 @mixin section-size {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     box-sizing: border-box;
     padding-left: 5%;
     padding-right: 5%;
@@ -52,6 +55,13 @@ $plum: #2E1733;
     top: 11px;
     left: -30px;
     transition: all 200ms ease;
+}
+
+@mixin fontello-header {
+    font-size: 30px;
+    font-family: fontello;
+    margin-left: 15px;
+    font-weight: 400;
 }
 
 //KEYFRAMES
@@ -103,6 +113,7 @@ body {
         }
     }
     &__name {
+        cursor: pointer;
         padding-left: 1%;
         padding-right: 1%;
         font-size: 200%;
@@ -110,6 +121,15 @@ body {
         word-break: keep-all;
         white-space: nowrap;
         font-family: 'Vollkorn SC', serif;
+        transition: all .3s ease-in-out;
+        &:hover {
+            filter: brightness(110%);
+            text-shadow: 1px 1px 2px $stark;
+        }
+        &:active {
+            filter: brightness(110%);
+            text-shadow: 1px 1px 2px $stark;
+        }
     }
     &__icon {
         color: $stark;
@@ -176,7 +196,7 @@ body {
         }
     }
     &__icon {
-        border-right: 2px solid $fuschia;
+        border-right: 2px solid $plum;
         padding: 30px 20px; 
         margin-bottom: -50px;
         width: 50px;
@@ -249,7 +269,7 @@ main {
         &--info {
             background-color: $jewel;
             &:before {
-                content: '\f0c9';
+                content: '\e805';
                 @include fontello;
             }
         }
@@ -309,16 +329,6 @@ main {
         }
         &--restart {
             font-weight: 600;
-            &:hover {
-                border: 1px solid $stark;
-                color: $stark;
-                &::before {
-                    color: $stark;
-                }
-            }
-            &:before {
-                color: $stark;
-            }
         }
     }
 }
@@ -338,7 +348,6 @@ main {
 }
 .restart {
     background-color: $vermillion;
-    color: $stark;
     filter: brightness(120%);
     -moz-box-shadow: 1px 1px 1px $stark;
     -webkit-box-shadow:  1px 1px 1px $stark;
@@ -415,11 +424,20 @@ main {
 
 
 //SECTION: INSTRUCTIONS
-.instructions-content {
-    &__paragraph {
+.instructions {
+    @include section-size;
+    &__name {
+        @include header2;
+        &:after {
+            @include fontello-header;
+            content: '\e805';;
+        }
+    }
+    &__content {
 
     }
 }
+
 
 
 
@@ -430,6 +448,10 @@ main {
     @include section-size;
     &__name {
         @include header2;
+        &:after {
+            @include fontello-header;
+            content: '\e800';
+        }
     }
 }
 
@@ -453,17 +475,23 @@ main {
     @include section-size;
     &__name {
         @include header2;
+        &:after {
+            @include fontello-header;
+            content: '\f1c9';
+        }
     }
 }
 
 .projects-list {
     list-style-type: none;
+    align-content: space-around;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: space-between;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
     &__item {
-    width: 45%;
+    display: flex;
+    width: 40%;
     }
     &__photo {
 
@@ -480,6 +508,10 @@ main {
     @include section-size;
     &__name {
         @include header2;
+        &:after {
+            @include fontello-header;
+            content: '\e801';
+        }
     }
     &__description {
 
@@ -507,31 +539,28 @@ main {
 
 
 //SECTION: CONTACT
-.contact-site {
+.contact {
     display: flex;
     flex-direction: column;
     align-items: center;
     @include section-size;
     &__name {
         @include header2;
+        &:after {
+            @include fontello-header;
+            content: '\e802';
+        }
     }
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    &__name {
-
-    }
-    &__mail {
-
-    }
-    &__message {
-
-    }
-    &__btn {
-
+    &__channels {
+        word-break: keep-all;
+        white-space: nowrap;
+        font-size: 120%;
+        &:before {
+            font-size: 120%;
+            font-family: fontello;
+            margin-right: 15px;
+            content: '\f1fa';
+        }
     }
 }
 
