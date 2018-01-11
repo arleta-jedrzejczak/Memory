@@ -6,9 +6,11 @@
 .icon-ccw:before { content: '\e804'; } /* '' */
 .icon-key:before { content: '\e805'; } /* '' */
 .icon-phone:before { content: '\e806'; } /* '' */
+.icon-gmail:before { content: '\e807'; } /* '' */
+.icon-eye:before { content: '\e808'; } /* '' */
+.icon-twitter:before { content: '\f099'; } /* '' */
 .icon-github-circled:before { content: '\f09b'; } /* '' */
 .icon-linkedin:before { content: '\f0e1'; } /* '' */
 .icon-code:before { content: '\f121'; } /* '' */
 .icon-file-code:before { content: '\f1c9'; } /* '' */
-.icon-at:before { content: '\f1fa'; } /* '' */
-.icon-comment:before { content: '\f4ac'; } /* '' */
+.icon-facebook:before { content: '\f30c'; } /* '' */

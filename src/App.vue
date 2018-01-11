@@ -72,8 +72,8 @@ export default {
         const user = 'arleta.joanna.jedrzejczak';
         const domain = 'gmail.com';
         const subject = '?subject=Mail from portfolio';
-        const text = 'Send me an email';
-        const all = ('<a hr' + 'ef="mai' + 'lto:' + user + '\x40' + domain + subject + '">' + text + '<'+'/a>');
+        const text = 'email';
+        const all = ('<a class="contact__link" hr' + 'ef="mai' + 'lto:' + user + '\x40' + domain + subject + '">' + text + '<'+'/a>');
         vm.mail = all;
       }
       else if(vm.component !== 'Home' && vm.component !== "Instructions") {

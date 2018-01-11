@@ -26,7 +26,6 @@ export default {
     },
     data () {
         return {
-            menuIconText: true,
             items: [
                 { id: 0, link: '<i class="demo-icon icon-home navbar__icon--size"></i>', description: 'Home', navbardescription: true },
                 { id: 1, link: '<i class="demo-icon icon-user navbar__icon--size"></i>', description: 'About', navbardescription: true },

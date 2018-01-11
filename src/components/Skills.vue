@@ -2,27 +2,13 @@
     <section id="skills" class="skills">
         <h2 class="skills__name">My skills</h2>
         <article class="skills-lits">
-            <p class="skills-list__description">Vestibulum mi enim, aliquam ut elementum id, bibendum eu dolor. Duis congue lectus eu diam auctor maximus. Donec eget pharetra purus. Cras at rhoncus ligula, dapibus dapibus ex. Phasellus varius tortor quis justo efficitur, vel cursus orci scelerisque. Aliquam facilisis est felis, eget eleifend libero tristique id. Etiam varius scelerisque consectetur. Suspendisse congue nisl at suscipit blandit.</p>
+            <p class="skills-list__description">{{ text }}</p>
             <ul class="skills-list__section">
-                <li class="skills-list__item">
-                    <p class="list-of-skills__description">Donec vel ante vel augue porttitor viverra vitae elementum felis.</p>
-                    <img src="icons/icon-test.png" alt="icon test" class="list-of-skills__icon"/>
-                </li>
-                <li class="skills-list__item">
-                    <p class="list-of-skills__description">Donec vel ante vel augue porttitor viverra vitae elementum felis.</p>
-                    <img src="icons/icon-test.png" alt="icon test" class="list-of-skills__icon"/>
-                </li>
-                <li class="skills-list__item">
-                    <p class="list-of-skills__description">Donec vel ante vel augue porttitor viverra vitae elementum felis.</p>
-                    <img src="icons/icon-test.png" alt="icon test" class="list-of-skills__icon"/>
-                </li>
-                <li class="skills-list__item">
-                    <p class="list-of-skills__description">Donec vel ante vel augue porttitor viverra vitae elementum felis.</p>
-                    <img src="icons/icon-test.png" alt="icon test" class="list-of-skills__icon"/>
-                </li>
-                <li class="skills-list__item">
-                    <p class="list-of-skills__description">Donec vel ante vel augue porttitor viverra vitae elementum felis.</p>
-                    <img src="icons/icon-test.png" alt="icon test" class="list-of-skills__icon"/>
+                <li class="skills-list__item"
+                v-for="item in items"
+                v-bind:key="item.id">
+                    <div v-html="item.picture"></div>
+                    <p>{{ item.description }}</p>
                 </li>
             </ul>
         </article>
@@ -34,7 +20,15 @@ export default {
 
   data () {
     return {
-
+        text: 'abcdefg',
+         items: [
+            { id: 0, picture: '<img src="http://dryicons.com/uploads/icon/preview/1008/accept_item.png">', description: 'Skill1' },
+            { id: 1, picture: '', description: 'Skill2' },
+            { id: 2, picture: '', description: 'Skill3' },
+            { id: 3, picture: '', description: 'Skill4' },
+            { id: 4, picture: '', description: 'Skill5' },
+            { id: 5, picture: '', description: 'Skill6' }
+        ]
       
     }
   },

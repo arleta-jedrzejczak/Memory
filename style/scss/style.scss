@@ -42,6 +42,7 @@ $plum: #2E1733;
 @mixin section-size {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     box-sizing: border-box;
     padding-left: 5%;
@@ -67,15 +68,39 @@ $plum: #2E1733;
 //KEYFRAMES
 
 @keyframes visibiling {
-    0% {opacity: 1; filter: alpha(opacity=0);}
-    50% {opacity: 1; filter: alpha(opacity=50);}
-    100% {opacity: 0; filter: alpha(opacity=100);}
+    0% {
+        opacity: 1;
+        -webkit-filter: alpha(opacity=0);
+        filter: alpha(opacity=0);
+    }
+    50% {
+        opacity: 1;
+        -webkit-filter: alpha(opacity=50);
+        filter: alpha(opacity=50);
+    }
+    100% {
+        opacity: 0;
+        -webkit-filter: alpha(opacity=100);
+        filter: alpha(opacity=100);
+    }
 }
 
 @-webkit-keyframes visibiling {
-    0% {opacity: 1; filter: alpha(opacity=0);}
-    50% {opacity: 1; filter: alpha(opacity=50);}
-    100% {opacity: 0; filter: alpha(opacity=100);}
+    0% {
+        opacity: 1;
+        -webkit-filter: alpha(opacity=0);
+        filter: alpha(opacity=0);
+    }
+    50% {
+        opacity: 1;
+        -webkit-filter: alpha(opacity=50);
+        filter: alpha(opacity=50);
+    }
+    100% {
+        opacity: 0;
+        -webkit-filter: alpha(opacity=100);
+        filter: alpha(opacity=100);
+    }
 }
 
 html, body {
@@ -123,10 +148,12 @@ body {
         font-family: 'Vollkorn SC', serif;
         transition: all .3s ease-in-out;
         &:hover {
+            -webkit-filter: brightness(110%);
             filter: brightness(110%);
             text-shadow: 1px 1px 2px $stark;
         }
         &:active {
+            -webkit-filter: brightness(110%);
             filter: brightness(110%);
             text-shadow: 1px 1px 2px $stark;
         }
@@ -137,6 +164,7 @@ body {
         transition: all .3s ease-in-out;
         &:hover {
             transform: scale(1.1);
+            -webkit-filter: brightness(120%);
             filter: brightness(120%);
         }
         &--size:before {
@@ -154,7 +182,7 @@ body {
 
 
 
-//VISIBLE NAVIGATION
+//NAVIGATION
 
 .navigation-bar {
     margin-top: 1%;
@@ -166,17 +194,13 @@ body {
         margin-bottom: 1%;
         transition: all .3s ease-in-out;
         &:hover {
+            -webkit-filter: brightness(120%);
             filter: brightness(120%);
         }
         &--text {
             font-size: 80%;
         }
     }
-}
-
-//Vue toggler's class => appearing 'menu' word
-.menuIconText {
-    visibility: hidden;
 }
 
 .navbar {
@@ -192,6 +216,7 @@ body {
         &:hover {
             @include button--hover();
             transform: scale(1.05);
+            -webkit-filter: brightness(120%);
             filter: brightness(120%);
         }
     }
@@ -291,6 +316,7 @@ main {
         }
         &:hover {
             @include button--hover;
+            -webkit-filter: brightness(120%);
             filter: brightness(120%);
             transform: scale(1.05);
             //border: 1px solid $stark;
@@ -303,6 +329,7 @@ main {
         }
         &:active {
             @include button--hover;
+            -webkit-filter: brightness(120%);
             filter: brightness(120%);
             transform: scale(1.05);
             border: 1px solid $stark;
@@ -348,6 +375,7 @@ main {
 }
 .restart {
     background-color: $vermillion;
+    -webkit-filter: brightness(120%);
     filter: brightness(120%);
     -moz-box-shadow: 1px 1px 1px $stark;
     -webkit-box-shadow:  1px 1px 1px $stark;
@@ -383,11 +411,12 @@ main {
         min-width: 100px;
         cursor: pointer;
         transition: all .3s ease-in-out;
-        &:hover {
+        &:hover {-webkit-filter: brightness(120%);
             filter: brightness(120%);
             transform: scale(1.05);
         }
         &:active {
+            -webkit-filter: brightness(120%);
             filter: brightness(120%);
             transform: scale(1.05);
         }
@@ -404,6 +433,7 @@ main {
 
 //CARDS
 .checked {
+    -webkit-filter: brightness(70%);
     filter: brightness(70%);
     font-size: 0;
     background: linear-gradient(70deg, $fuschia, $void, $jewel, $stark);
@@ -411,11 +441,13 @@ main {
 }
 
 .passive {
+    -webkit-filter: brightness(50%);
     filter: brightness(50%); 
     cursor: initial;
     background: linear-gradient(70deg, black, gray);
     border-color: darkslategrey;
     &:hover {
+        -webkit-filter: brightness(50%);
         filter: brightness(50%);
         transform: scale(1)
     }
@@ -483,6 +515,7 @@ main {
 }
 
 .projects-list {
+    box-sizing: border-box;
     list-style-type: none;
     align-content: space-around;
     display: flex;
@@ -490,15 +523,69 @@ main {
     justify-content: space-around;
     flex-wrap: wrap;
     &__item {
-    display: flex;
-    width: 40%;
+        display: flex;
+        padding: 2%;
+        position: relative;
+        position: relative;
+        margin-bottom: 2%;
     }
-    &__photo {
+    &__figure {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        &--frame {
+            width: 100%;
+            margin-bottom: 2%;
+            transition: all .1s ease-in-out;
+        }
+        &--description {
 
+        }
+        &--picture {
+            border: 1px solid $stark;
+        }
     }
-    &__description {
+    &__square {
+        position: absolute;
+        background-color: $plum;
+        border-radius: 5px;
+        width: 30%;
+        height: 30%;
+        visibility: hidden;
+        -moz-box-shadow: 0 0 1em $plum;
+        -webkit-box-shadow: 0 0 1em $plum;
+        box-shadow: 0 0 1em $plum;
+        cursor: pointer;
+        &--github {
+            left: 15%;
+            top: 32.5%;
+        }
+        &--demo {
+            right: 15%;
+            top: 32.5%;
+        }
+        &--icon {
+            color: $stark;
+            font-size: 200%;
+            padding: 5%;
+            &:before {
+                font-size: 200%;
+                padding-top: 20%;
+            }
+        }
+    }
+}
 
-    }
+//Vue toggler's class => bluring pictures
+.pictureHover {
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+}
+
+//Vue toggler's class => appearing squares
+.visibleIcon {
+    visibility: visible;
 }
 
 
@@ -540,9 +627,6 @@ main {
 
 //SECTION: CONTACT
 .contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     @include section-size;
     &__name {
         @include header2;
@@ -551,15 +635,58 @@ main {
             content: '\e802';
         }
     }
-    &__channels {
-        word-break: keep-all;
-        white-space: nowrap;
+    &__link {
+        color: $stark;
+        text-decoration: none;
+        padding-bottom: 1px;
+        border-bottom: 0.5px solid $stark;
+        &:hover {
+            border-bottom-color: $fuschia;
+        }
+    }
+    &__item {
         font-size: 120%;
+        margin-bottom: 2%;
+        transition: all .1s ease-in-out;
+        &:hover {
+            -webkit-filter: brightness(110%);
+            filter: brightness(110%);
+            text-shadow: 1px 1px 2px $stark;
+        }
+        &:active {
+            -webkit-filter: brightness(110%);
+            filter: brightness(110%);
+            text-shadow: 1px 1px 2px $stark;
+        }
         &:before {
             font-size: 120%;
             font-family: fontello;
             margin-right: 15px;
-            content: '\f1fa';
+        }
+    }
+    &__mail {
+        &:before {
+            content: '\e807';
+        }
+    }
+    &__facebook {
+        &:before {
+            content: '\f30c';
+        }
+    }
+    &__twitter {
+        &:before {
+            content: '\f099';
+        }
+    }
+    &__linkedin {
+        &:before {
+            content: '\f0e1';
+        }
+    }
+    &__github {
+        &:before {
+            content: '\f09b';
         }
     }
 }
