@@ -374,19 +374,23 @@ main {
 //SECTION: HEAD (WITH GAME)
 .head {
     @include section-size;
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
     align-content: center;
 }
 
 .game {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: nowrap;
     width: 70%;
     margin: 0 auto;
+    &__column {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
     &__card {
         font-size: 300%;
         text-align: center;
@@ -407,8 +411,6 @@ main {
             -webkit-filter: brightness(120%);
             filter: brightness(120%);
             transform: scale(1.05);
-        }
-        &:before {
         }
     }
     &__counter {
@@ -480,6 +482,7 @@ main {
     flex-direction: row;
     justify-content: space-between;
     &__photo {
+        content: url(../../images/about-photo-s.png);
         border: 1px solid $stark;
     }
     &__content {

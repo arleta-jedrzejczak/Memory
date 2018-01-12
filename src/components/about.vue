@@ -2,7 +2,7 @@
   <section id="about" class="about">
     <h2 class="about__name">About me</h2>
     <div class="allabout">                            
-        <img src="images/about-photo-s.png" alt="my portrait" class="allabout__photo" />
+        <img alt="my portrait" class="allabout__photo" />
         <article class="allabout__content">
             <p>{{ description }}</p>
         </article>
