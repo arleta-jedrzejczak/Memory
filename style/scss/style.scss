@@ -158,6 +158,10 @@ body {
             text-shadow: 1px 1px 2px $stark;
         }
     }
+    &__icons {
+        display: flex;
+        flex-direction: row;
+    }
     &__icon {
         color: $stark;
         flex-grow: 4;
@@ -186,21 +190,6 @@ body {
 
 .navigation-bar {
     margin-top: 1%;
-    &__switch {
-        margin-left: 1%;
-        font-size: 100%;
-        cursor: pointer;
-        display: inline-flex;
-        margin-bottom: 1%;
-        transition: all .3s ease-in-out;
-        &:hover {
-            -webkit-filter: brightness(120%);
-            filter: brightness(120%);
-        }
-        &--text {
-            font-size: 80%;
-        }
-    }
 }
 
 .navbar {
@@ -319,7 +308,6 @@ main {
             -webkit-filter: brightness(120%);
             filter: brightness(120%);
             transform: scale(1.05);
-            //border: 1px solid $stark;
             -moz-box-shadow: none;
             -webkit-box-shadow:  none;
             box-shadow:  none;
@@ -705,10 +693,6 @@ main {
         font-family: 'Vollkorn SC', serif;
 
     }
-}
-
-.value {
-    color: red;
 }
 
 @import "media";
