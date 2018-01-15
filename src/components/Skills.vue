@@ -1,6 +1,9 @@
 <template>
     <section id="skills" class="skills">
-        <h2 class="skills__name">My skills</h2>
+        <h2 class="skills__name">
+            <span class="skills__name--icon-label">My skills</span>
+            <span class="demo-icon icon-cog-alt about__name--icon" data-icon="skills" aria-hidden="true"></span>
+        </h2>
         <article class="skills-lits">
             <p class="skills-list__description">{{ text }}</p>
             <ul class="skills-list__section">

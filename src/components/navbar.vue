@@ -27,11 +27,11 @@ export default {
     data () {
         return {
             items: [
-                { id: 0, link: '<i class="demo-icon icon-home navbar__icon--size"></i>', description: 'Home', navbardescription: true },
-                { id: 1, link: '<i class="demo-icon icon-user navbar__icon--size"></i>', description: 'About', navbardescription: true },
-                { id: 2, link: '<i class="demo-icon icon-file-code navbar__icon--size"></i>', description: 'Projects', navbardescription: true },
-                { id: 3, link: '<i class="demo-icon icon-cog-alt navbar__icon--size"></i>', description: 'Skills', navbardescription: true },
-                { id: 4, link: '<i class="demo-icon icon-mail navbar__icon--size"></i>', description: 'Contact', navbardescription: true }
+                { id: 0, link: '<span><span class="demo-icon icon-home navbar__icon--size" aria-hidden="true"></span><span class="navbar__item--visuallyhidden">home icon</span></span>', description: 'Home', navbardescription: true },
+                { id: 1, link: '<span><span class="demo-icon icon-user navbar__icon--size" aria-hidden="true"></span><span class="navbar__item--visuallyhidden">about icon</span></span>', description: 'About', navbardescription: true },
+                { id: 2, link: '<span><span class="demo-icon icon-file-code navbar__icon--size" aria-hidden="true"></span><span class="navbar__item--visuallyhidden">projects icon</span></span>', description: 'Projects', navbardescription: true },
+                { id: 3, link: '<span><span class="demo-icon icon-cog-alt navbar__icon--size" aria-hidden="true"></span><span class="navbar__item--visuallyhidden">skills icon</span></span>', description: 'Skills', navbardescription: true },
+                { id: 4, link: '<span><span class="demo-icon icon-mail navbar__icon--size" aria-hidden="true"></span><span class="navbar__item--visuallyhidden">contact icon</span></span>', description: 'Contact', navbardescription: true }
             ]
         }
     },
