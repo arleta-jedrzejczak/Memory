@@ -128,28 +128,6 @@ export default {
           return vm.cards.sort(function() {
               return 0.5 - Math.random()});
         }
-    },
-    mounted: {
-        restartGame: function(){
-            const vm = this;
-            vm.firstCardProperty = '';
-            vm.firstCardId = '';
-            vm.firstCard = '';
-            vm.lock = false;
-            vm.turnCounter = 0;
-            vm.pairs = 6;
-            vm.oneVisible = false;
-            vm.cards.forEach(function(card){
-                card.passive = false;
-                card.checked = true;
-            })
-            vm.randomAgain();
-        },
-        randomAgain: function(){
-            const vm = this;
-          return vm.cards.sort(function() {
-              return 0.5 - Math.random()});
-        },
     }
 }
 </script>
