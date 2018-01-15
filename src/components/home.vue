@@ -12,7 +12,6 @@
             </div>
         </div>
         <p class="game__counter">Turn counter: {{ turnCounter }}</p>
-        <button v-on:click="restartGame">Restart</button>
     </div>
     </section>
 </template>
