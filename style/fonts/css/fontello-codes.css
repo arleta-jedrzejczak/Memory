@@ -8,6 +8,13 @@
 .icon-phone:before { content: '\e806'; } /* '' */
 .icon-gmail:before { content: '\e807'; } /* '' */
 .icon-eye:before { content: '\e808'; } /* '' */
+.icon-dot:before { content: '\e809'; } /* '' */
+.icon-mobile:before { content: '\e80a'; } /* '' */
+.icon-users:before { content: '\e80b'; } /* '' */
+.icon-thumbs-up:before { content: '\e80c'; } /* '' */
+.icon-megaphone:before { content: '\e80d'; } /* '' */
+.icon-attention-circled:before { content: '\e80e'; } /* '' */
+.icon-database:before { content: '\e80f'; } /* '' */
 .icon-twitter:before { content: '\f099'; } /* '' */
 .icon-github-circled:before { content: '\f09b'; } /* '' */
 .icon-linkedin:before { content: '\f0e1'; } /* '' */

@@ -5,7 +5,7 @@
       <span class="demo-icon icon-user about__name--icon" data-icon="about" aria-hidden="true"></span>
     </h2>
     <div class="allabout">                            
-        <img alt="my portrait" class="allabout__photo" />
+        <img src="../../images/about-photo-s.png" alt="my portrait" class="allabout__photo" />
         <article class="allabout__content">
             <p>{{ description }}</p>
         </article>

@@ -35,8 +35,8 @@ $plum: #2E1733;
 @mixin header2 {
     font-size: 30px;
     font-weight: 600;
-    margin-bottom: 5%;
-    margin-top: 2%;
+    margin-bottom: 5vw;
+    margin-top: 2vw;
 }
 
 @mixin section-size {
@@ -45,8 +45,8 @@ $plum: #2E1733;
     justify-content: flex-start;
     align-items: center;
     box-sizing: border-box;
-    padding-left: 3%;
-    padding-right: 3%;
+    padding-left: 3vw;
+    padding-right: 3vw;
     width: 100%;
 }
 
@@ -97,27 +97,16 @@ $plum: #2E1733;
     }
 }
 
-@media (max-width: 575px) {
+@media (max-width: 700px) {
+    //SECTION: HEAD (WITH GAME)
 
-    //HEADER
-    .header {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-top: 0;
-        margin-bottom: 5%;
-        &__logo {
-            flex-grow: 1;
-        }
-        &__name {
-            width: 100%;
-            flex-grow: 2;
-            font-size: 170%;
-        }
-        &__icons {
-            align-self: flex-end;
-            flex-grow: 1;
-        }
+    .game {
+        width: 90%;
     }
+}
+
+@media (max-width: 767px) {
+
 
 
     .grid {
@@ -129,12 +118,12 @@ $plum: #2E1733;
     //NAVIGATION
 
     .navbar {
-        padding-left: 3%;
-        padding-right: 3%;
+        padding-left: 3vw;
+        padding-right: 3vw;
         flex-direction: row;
         height: auto;
         &__item {
-            margin-bottom: 3%;
+            margin-bottom: 3vw;
         }
         &__icon {
             width: auto;
@@ -145,7 +134,7 @@ $plum: #2E1733;
                 border-right: none;
             }
             &--size {
-                padding-bottom: 10%;
+                padding-bottom: 10vw;
             }
         }
         &__description {
@@ -160,9 +149,9 @@ $plum: #2E1733;
         flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
-        margin-bottom: 2%;
+        margin-bottom: 2vw;
         &__button {
-            margin: 1%;
+            margin: 1vw;
             @include button;
             &:hover {
                 &:before {
@@ -179,21 +168,21 @@ $plum: #2E1733;
     }
 
     .game {
-        width: 100%;
         align-items: center;
         flex-direction: column-reverse;
         &__column {
             justify-content: space-around;
         }
         &__card {
-            margin: 2%;
+            margin: 2vw;
+            margin-bottom: 2vh;
             width: auto;
             height: auto;
             min-height: none;
             min-width: none;
         }
         &__counter {
-            margin-bottom: 5%;
+            margin-bottom: 5vw;
         }
     }
 
@@ -229,9 +218,9 @@ $plum: #2E1733;
             content: url(../../images/about-photo-m-square.png);
             width: 90%;
             height: 90%;
-            margin-left: 5%;
-            margin-right: 5%;
-            margin-bottom: 5%;
+            margin-left: 5vw;
+            margin-right: 5vw;
+            margin-bottom: 5vw;
         }
         &__content {
             margin-left: 0;
@@ -276,11 +265,42 @@ $plum: #2E1733;
 
     //FOOTER
     .footer {
-        margin: 5%;
-        padding-bottom: 3%;
+        margin: 5vw;
+        padding-bottom: 3vw;
         &__content {
             padding-right: 0;
             text-align: right;
         }
     }
+}
+
+@media (max-width: 500px) {
+    //SECTION: HEAD (WITH GAME)
+
+        //HEADER
+        .header {
+            flex-direction: row;
+            align-items: flex-start;
+            margin-top: 0;
+            flex-wrap: wrap;
+            margin-bottom: 5vw;
+            &__logo {
+                display: none;
+                &--mobile {
+                    align-self: flex-start;
+                    display: inline-flex;
+                    flex-grow: 9;
+                }
+            }
+            &__name {
+                width: 100%;
+                flex-grow: 2;
+                font-size: 170%;
+            }
+            &__icons {
+                display: inline-flex;
+                align-self: flex-end;
+                flex-grow: 1;
+            }
+        }
 }

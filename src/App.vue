@@ -1,13 +1,17 @@
-<template>
+<template>
 <div class="topper">
 <app-header v-on:changeComponent="updateComponent($event)"/>
   <div class="grid">
     <navbar v-bind:component='component' v-on:changeComponent="updateComponent($event)"/>
     <main>
-      <buttons v-on:changeComponent="updateComponent($event)" v-bind:back="back" v-bind:github="github" v-bind:linked="linked" v-bind:turnCount="turnCount" v-bind:info="info" v-bind:end="end" v-bind:link="link" v-bind:turns="turns" v-bind:restart="restart"/>
-      <keep-alive>
-        <component v-bind:is="component" v-bind:mail="mail" v-on:changeComponent="updateComponent($event)" v-on:changeGithub="updateGithub($event)" v-on:changeLinked="updateLinked($event)" v-on:winnerAlert="winnerTurns($event)"/>
-      </keep-alive>
+      <buttons v-on:changeComponent="updateComponent($event)" v-bind:back="back" v-bind:github="github" v-bind:linked="linked" v-bind:turnCount="turnCount" v-bind:info="info">
+        <button class="buttons__button buttons__button--end" v-bind:class="{restart: restart}" v-if="end" v-on:click="restartGame"><span v-html="link"></span><span v-if="turns">{{ turnCount }} turns!</span></button>
+      </buttons>
+      <transition>
+        <keep-alive v-bind:include=alive>
+          <component v-bind:is="component" v-bind:mail="mail" v-on:changeComponent="updateComponent($event)" v-on:changeGithub="updateGithub($event)" v-on:changeLinked="updateLinked($event)" v-on:winnerAlert="winnerTurns($event)"/>
+        </keep-alive>
+      </transition>
     </main>  
   </div>
 </div>
@@ -24,6 +28,7 @@ import Projects from './components/Projects.vue'
 import Skills from './components/Skills.vue'
 import Instructions from './components/Instructions.vue'
 import Buttons from './components/Buttons.vue'
+import Reload from './components/Reload.vue'
 
 export default {
   components: {
@@ -35,7 +40,8 @@ export default {
     'Projects': Projects,
     'Skills': Skills,
     'Instructions': Instructions,
-    'Buttons': Buttons
+    'Buttons': Buttons,
+    'Reload': Reload
   },
   data () {
     return {
@@ -49,10 +55,30 @@ export default {
       link: 'You won in ',
       turns: true,
       restart: false,
-      mail: ''
+      mail: '',
+      alive: ['Home']
     }
   },
   methods: {
+    backToGame: function() {
+      const vm = this;
+      vm.component = 'Home';
+      vm.alive = ['Home'];
+      vm.turnCount = '';
+      vm.end = false;
+      vm.turns = true;
+      vm.restart = false;
+      vm.link = 'You won in ';
+      vm.linked = false;
+      vm.github = false;
+      vm.back = false;
+    },
+    restartGame: function() {
+      const vm = this;
+      vm.alive = [];
+      vm.component = 'Reload';
+      setTimeout(vm.backToGame, 1000);
+    },
     newLink: function(link) {
       const vm = this;
       vm.link = '<span class="buttons__button--restart">RESTART GAME</span>';

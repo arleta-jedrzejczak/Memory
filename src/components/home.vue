@@ -3,7 +3,6 @@
     <div class="game">
         <div class="game__column">
             <div class="game__card"
-            v-on:DOMContentLoaded="randomList"
             v-on:click="switchCard(card, cards)"
             v-for="card in cards"
             v-bind:key="card.id"
@@ -16,20 +15,10 @@
     </section>
 </template>
 
-
-
 <script>
 export default {
     data () {
-        return {
-            firstCardProperty: '',
-            firstCardId: '',
-            firstCard: '',
-            lock: false,
-            turnCounter: 0,
-            pairs: 6,
-            oneVisible: false,
-            cards: [
+        var cards = [
                 { id: 0, text: '<span><span class="demo-icon icon-user" aria-hidden="true"></span><span class="game__card--visuallyhidden">about icon</span></span>', checked: true, property: 'About', passive: false },
                 { id: 1, text: '<span><span class="demo-icon icon-user" aria-hidden="true"></span><span class="game__card--visuallyhidden">about icon</span></span>', checked: true, property: 'About', passive: false },
                 { id: 2, text: '<span><span class="demo-icon icon-file-code" aria-hidden="true"></span><span class="game__card--visuallyhidden">projects icon</span></span>', checked: true, property: 'Projects', passive: false },
@@ -41,30 +30,39 @@ export default {
                 { id: 8, text: '<span><span class="demo-icon icon-github-circled" aria-hidden="true"></span><span class="game__card--visuallyhidden">github icon</span></span>', checked: true, property: 'github', passive: false, link: '<a href="https://github.com/laililang" target="_blank">Go to my GitHub</a>' },
                 { id: 9, text: '<span><span class="demo-icon icon-github-circled" aria-hidden="true"></span><span class="game__card--visuallyhidden">github icon</span></span>', checked: true, property: 'github', passive: false, link: '<a href="https://github.com/laililang" target="_blank">Go to my GitHub</a>' },
                 { id: 10, text: '<span><span class="demo-icon icon-linkedin" aria-hidden="true"></span><span class="game__card--visuallyhidden">linkedin icon</span></span>', checked: true, property: 'linkedin', passive: false, link: '<a href="https://pl.linkedin.com/in/arleta-j%C4%99drzejczak-167345147" target="_blank">Go to my LinkedIn</a>' },
-                { id: 11, text: '<span><span class="demo-icon icon-linkedin" aria-hidden="true"></span><span class="game__card--visuallyhidden">linkedin icon</span></span>', checked: true, property: 'linkedin', passive: false, link: '<a href="https://pl.linkedin.com/in/arleta-j%C4%99drzejczak-167345147" target="_blank">Go to my LinkedIn</a>' }
-            ]
+                { id: 11, text: '<span><span class="demo-icon icon-linkedin" aria-hidden="true"></span><span class="game__card--visuallyhidden">linkedin icon</span></span>', checked: true, property: 'linkedin', passive: false, link: '<a href="https://pl.linkedin.com/in/arleta-j%C4%99drzejczak-167345147" target="_blank">Go to my LinkedIn</a>' }];
+                cards.sort(function() { return 0.5 - Math.random() });
+        return {
+            firstCardProperty: '',
+            firstCardId: '',
+            firstCard: '',
+            lock: false,
+            turnCounter: 0,
+            pairs: 6,
+            oneVisible: false,
+            cards: cards
         }
     },
     methods: {
-        winnerAlert: function(turnCounter) {
-            var vm = this;
-            this.$emit('winnerAlert', vm.turnCounter);
-        },
-        changeComponent: function(firstCardProperty) {
-          var vm = this;
-          this.$emit('changeComponent', vm.firstCardProperty);
-        },
-        changeGithub: function() {
-          var vm = this;
-          this.$emit('changeGithub', true);
-        },
-        changeLinked: function() {
-          var vm = this;
-          this.$emit('changeLinked', true);
-        },
         switchCard: function(card, cards) {
 
             var vm = this;
+
+            function winnerAlert(turnCounter) {
+                vm.$emit('winnerAlert', vm.turnCounter);
+            }
+
+            function changeComponent(firstCardProperty) {
+                vm.$emit('changeComponent', vm.firstCardProperty);
+            }
+
+            function changeGithub() {
+                vm.$emit('changeGithub', true);
+            }
+
+            function changeLinked() {
+                vm.$emit('changeLinked', true);
+            }
 
             function flipCard() {
                 card.checked = false;
@@ -80,13 +78,13 @@ export default {
                 vm.firstCard.passive = true;
                 card.passive = true;
                 if(vm.firstCardId > 7 && vm.firstCardId < 10) { //GitHub
-                    vm.changeGithub(true);
+                    changeGithub(true);
                 }
                 else if(vm.firstCardId > 9) { //LinedIn
-                    vm.changeLinked(true);
+                    changeLinked(true);
                 }
                 else { // other components
-                    vm.changeComponent(vm.firstCardProperty);
+                    changeComponent(vm.firstCardProperty);
                 }
                 vm.lock = false;
             }
@@ -108,7 +106,7 @@ export default {
                             setTimeout(changeCardTrue, 750);
                             vm.pairs--;
                             if(vm.pairs === 0) {
-                                setTimeout(vm.winnerAlert, 2000);
+                                setTimeout(winnerAlert, 1000);
                             }
                         }
                         else { //lack of similarity
@@ -119,13 +117,6 @@ export default {
                     }
                 }
             }
-        }
-    },
-  computed: {
-        randomList: function(){
-            const vm = this;
-          return vm.cards.sort(function() {
-              return 0.5 - Math.random()});
         }
     }
 }

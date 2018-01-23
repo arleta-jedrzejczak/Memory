@@ -5,6 +5,10 @@
             <span class="header__logo--visuallyhidden">Site's logo</span>
         </div>
         <h1 v-on:click="moveComponent" class="header__name">{{ header_name }}</h1>
+        <div class="header__logo--mobile">
+            <span class="demo-icon icon-code header__logo--size" aria-hidden="true"></span>
+            <span class="header__logo--visuallyhidden">Site's logo</span>
+        </div>
         <div class="header__icons">
             <a v-bind:href="github_link" target="_blank">
                 <div class="header__icon">
