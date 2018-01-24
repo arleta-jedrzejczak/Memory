@@ -674,14 +674,19 @@ main {
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
+            padding-bottom: 2vw;
         }
-        &--name {
-            padding: 1vw;
-            font-size: 110%;
-        }
-        &--icons {
-            font-size: 200%;
-            //margin: 2vw;
+    }
+    &__minicons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        font-size: 200%;
+        flex-wrap: wrap;
+        max-width: 100%;
+        &--item {
+            margin-left: 0.5vw;
+            margin-right: 0.5vw;
         }
     }
     &__square {

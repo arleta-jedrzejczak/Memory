@@ -60,6 +60,12 @@
                         <span class="beginner__item--visuallyhidden">j query icon</span>
                     </div>
                 </li>
+                <li class="beginner__item">
+                    <div class="beginner__item--devicon" title="mySQL">
+                        <span class="devicon-mysql-plain"></span>
+                        <span class="beginner__item--visuallyhidden">my s q l icon</span>
+                    </div>
+                </li>
             </ul>
 
             <p class="skills__lists--description">Scholarships, workshops and certifications:</p>
