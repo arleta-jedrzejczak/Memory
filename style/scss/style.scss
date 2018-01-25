@@ -536,9 +536,8 @@ main {
         border-radius: 5px;
         margin: 1vw;
         margin-bottom: 2vw;
-        width: 20%;
-        min-height: 100px;
-        min-width: 100px;
+        width: 10vw;
+        height: 10vw;
         cursor: pointer;
         transition: all .3s ease-in-out;
         &:hover {-webkit-filter: brightness(120%);
