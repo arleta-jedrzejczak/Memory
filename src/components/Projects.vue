@@ -30,30 +30,28 @@ export default {
     return {
         items: [
             { id: 0,
-            picture: '<img class="projects-list__figure--picture" src="https://i.vimeocdn.com/portrait/58832_300x300" alt="test photo"/>',
+            picture: '<img class="projects-list__figure--picture" src="src/images/printportfolio.png" alt="test photo"/>',
             description: 'My portfolio',
             minicons: '<span class="projects-list__minicons--item devicon-html5-plain" title="HTML5"></span><span class="projects-list__minicons--item devicon-css3-plain" title="CSS3"></span><span class="projects-list__minicons--item devicon-sass-original" title="Sass/SCSS"></span><span class="projects-list__minicons--item demo-icon icon-mobile" title="RWD"></span><span class="projects-list__minicons--item devicon-javascript-plain" title="JavaScript"></span><span class="projects-list__minicons--item devicon-vuejs-plain" title="VueJS 2"></span>',
             pictureHover: false,
             visibleIcon: false,
             linkgit: '<a href="https://github.com/laililang/Memory" target="_blank"><i class="demo-icon icon-github-circled projects-list__square--icon"></i></a>' },
 
-            { id: 1, picture: '<img class="projects-list__figure--picture" src="https://i.vimeocdn.com/portrait/58832_300x300" alt="test photo"/>',
-            description: 'To Do (Before You Die) Aplication',
+            { id: 1, picture: '<img class="projects-list__figure--picture" src="src/images/printtodo.png" alt="test photo"/>',
+            description: 'To Do (Before You Die) Application',
             minicons: '<span class="projects-list__minicons--item devicon-html5-plain" title="HTML5"></span><span class="projects-list__minicons--item devicon-css3-plain" title="CSS3"></span><span class="projects-list__minicons--item demo-icon icon-mobile" title="RWD"></span><span class="projects-list__minicons--item devicon-javascript-plain"  title="JavaScript"></span><span class="projects-list__minicons--item devicon-jquery-plain" title="jQuery"></span>',
             pictureHover: false,
             visibleIcon: false,
             linkgit: '<a href="https://github.com/laililang/To-Do-App" target="_blank"><i class="demo-icon icon-github-circled projects-list__square--icon"></i></a>',
             linkdemo: '<a href="https://laililang.github.io/To-Do-App/" target="_blank"><i class="demo-icon icon-eye projects-list__square--icon"></i></a>' },
 
-            { id: 2, picture: '<img class="projects-list__figure--picture" src="https://i.vimeocdn.com/portrait/58832_300x300" alt="test photo"/>',
+            { id: 2, picture: '<img class="projects-list__figure--picture" src="src/images/printbusiness.png" alt="test photo"/>',
             description: 'Business & Creative',
             minicons: '<span class="projects-list__minicons--item devicon-html5-plain" title="HTML5"></span><span class="projects-list__minicons--item devicon-css3-plain" title="CSS3"></span><span class="projects-list__minicons--item demo-icon icon-mobile" title="RWD"></span><span class="projects-list__minicons--item devicon-bootstrap-plain"  title="Bootstrap"></span>',
             pictureHover: false,
             visibleIcon: false,
             linkgit: '<a href=https://github.com/laililang/Business target="_blank"><i class="demo-icon icon-github-circled projects-list__square--icon"></i></a>',
-            linkdemo: '<a href=https://laililang.github.io/Business/ target="_blank"><i class="demo-icon icon-eye projects-list__square--icon"></i></a>' },
-
-            { id: 3, picture: '<img class="projects-list__figure--picture" src="https://i.vimeocdn.com/portrait/58832_300x300" alt="test photo"/>', description: 'Project4', pictureHover: false, visibleIcon: false }
+            linkdemo: '<a href=https://laililang.github.io/Business/ target="_blank"><i class="demo-icon icon-eye projects-list__square--icon"></i></a>' }
         ]
       
     }

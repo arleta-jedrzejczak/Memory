@@ -5,7 +5,12 @@
       <span class="demo-icon icon-key instructions__name--icon" data-icon="key" aria-hidden="true"></span>
     </h2>                           
     <article class="instructions__content">
-
+      <p>Pick a card.</p>
+      <p>Find a sibling.</p>
+      <p>Repeat.</p>
+      <p>Enjoy :)</p>
+      <br>
+      <p>Use buttons and the navigation panel to find what you're looking for.</p>
      </article>
   </section>
 </template>

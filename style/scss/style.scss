@@ -178,7 +178,8 @@ body {
     background-color: $void;
     font-family: 'Oxygen', Arial, Helvetica, sans-serif;
     color: $stark;
-    letter-spacing: 0,3em;
+    letter-spacing: 0.03em;
+    line-height: 150%;
 }
 
 //LOADER
@@ -555,6 +556,7 @@ main {
     }
     &__counter {
         margin-top: 5vh;
+        margin-bottom: 1vh;
         display: block;
     }
 }
@@ -592,7 +594,9 @@ main {
         @include header2;
     }
     &__content {
-
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -630,6 +634,9 @@ main {
     }
     &__content {
         margin-left: 3vw;
+        &--bold {
+            font-weight: 600;
+        }
     }
 }
 
@@ -667,7 +674,7 @@ main {
             transition: all .1s ease-in-out;
         }
         &--picture {
-            border: 1px solid $stark;
+            border: 3px solid $stark;
         }
         &--description {
             display: flex;
@@ -702,11 +709,11 @@ main {
         cursor: pointer;
         &--github {
             left: 15%;
-            top: 32.5%;
+            top: 25%;
         }
         &--demo {
             right: 15%;
-            top: 32.5%;
+            top: 25%;
         }
         &--icon {
             color: $stark;
@@ -766,53 +773,7 @@ main {
     }
 }
 
-.tools {
-    @include list;
-    &__item {
-        padding: 2vw;
-        &--devicon {
-            font-size: 400%;
-        }
-        &--visuallyhidden {
-            @include visuallyhidden;
-        }
-    }
-}
-
-.beginner {
-    @include list;
-    &__item {
-        padding: 2vw;
-        &--devicon {
-            font-size: 400%;
-        }
-        &--visuallyhidden {
-            @include visuallyhidden;
-        }
-    }
-}
-
-.practice {
-    @include list;
-    &__item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        flex-wrap: wrap;
-        padding: 2vw;
-        &--devicon {
-            font-size: 400%;
-        }
-        &--visuallyhidden {
-            @include visuallyhidden;
-        }
-    }
-    &__description {
-        font-size: 70%;
-    }
-}
-
-.soft {
+.my-skills {
     @include list;
     &__item {
         display: flex;

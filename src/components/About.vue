@@ -7,7 +7,9 @@
     <div class="allabout">                            
         <img src="../../images/about-photo-s.png" alt="my portrait" class="allabout__photo" />
         <article class="allabout__content">
-            <p>{{ description }}</p>
+          <p>Hello, my name is <span class="allabout__content--bold">Arleta</span> and I'm web developer wannabe.</p>
+          <p>I've been studying how to build websites for over a year. I'm interested in client and server sides in applications. Besides explore front-end environment, I also starting to learn PHP and mySQL.</p>
+          <p>I'm currently <span class="allabout__content--bold">for a first job or an internship as a junior front-end developer</span>.</p>
         </article>
     </div>
   </section>
@@ -20,7 +22,7 @@
 export default {
   data() {
     return {
-      description: 'Nullam commodo mollis enim luctus dictum. Morbi at laoreet est. Integer blandit nulla ullamcorper augue accumsan, sed condimentum orci venenatis. In finibus sem neque, nec tincidunt nisl laoreet vitae. Donec vel auctor tellus, vel sollicitudin est. Integer vehicula sit amet libero eu venenatis. Nam tortor nisl, ultrices sed ligula id, malesuada laoreet arcu.'
+      
       
     }
   },
