@@ -6,6 +6,7 @@
     </h2>
     <div class="allabout">
         <span v-html="img"></span>
+        <span v-html="imgsquare"></span>
         <article class="allabout__content">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam elit odio, semper at mattis id, ullamcorper mollis eros. Proin sit amet rutrum leo, sit amet convallis odio. Maecenas suscipit tempor nunc elementum bibendum. Morbi nec fermentum justo, ac mattis erat.</p>
           <p>Aenean at euismod massa, ut eleifend ligula. Proin mi purus, pellentesque id massa ac, dictum tincidunt nibh. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
