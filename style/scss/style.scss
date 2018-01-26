@@ -600,6 +600,12 @@ main {
         height: 10vw;
         cursor: pointer;
         transition: all .3s ease-in-out;
+        display:table;
+        vertical-align:middle;
+        &--icon {
+            display: table-cell;
+            vertical-align: middle;
+        }
         &:hover {-webkit-filter: brightness(120%);
             filter: brightness(120%);
             transform: scale(1.05);

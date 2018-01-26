@@ -148,7 +148,7 @@
                         <span class="demo-icon icon-megaphone"></span>
                         <span class="my-skills__item--visuallyhidden">communication icon</span>
                     </div>
-                    <p class="my-skills__description">Communiaction</p>
+                    <p class="my-skills__description">Communication</p>
                 </li>
                 <li class="my-skills__item">
                     <div class="my-skills__item--devicon" title="Teamwork">
