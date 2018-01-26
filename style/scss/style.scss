@@ -587,6 +587,7 @@ main {
         margin-bottom: 2vw;
     }
     &__card {
+        box-sizing: border-box;
         overflow: visible;
         font-size: 300%;
         text-align: center;
