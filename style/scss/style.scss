@@ -589,7 +589,6 @@ main {
     &__card {
         box-sizing: border-box;
         overflow: visible;
-        font-size: 300%;
         text-align: center;
         //padding-top: 1vw;
         border: 3px solid $vermillion;
@@ -602,9 +601,10 @@ main {
         transition: all .3s ease-in-out;
         display: table;
         vertical-align: middle;
-        &:before {
+        &--icon {
             display: table-cell;
             vertical-align: middle;
+            font-size: 300%;
         }
         &:hover {-webkit-filter: brightness(120%);
             filter: brightness(120%);
