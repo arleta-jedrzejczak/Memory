@@ -450,10 +450,11 @@ main {
 
 //SECTION: BUTTONS
 .buttons {
-    box-sizing: border-box;
     @include flex-row;
     justify-content: flex-end;
     padding: 1vw;
+    box-sizing: border-box;
+    width: 100%;
     &__button {
         overflow: hidden;
         transition: all .3s ease-in-out;

@@ -210,6 +210,7 @@ $plum: #2E1733;
     .allabout {
         flex-direction: row;
         &__photo {
+            content: url('images/images/about-photo-s-square.png');
             width: 50%;
             height: 50%;
             margin-left: 5vw;
