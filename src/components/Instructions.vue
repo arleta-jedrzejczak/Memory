@@ -4,14 +4,14 @@
       <span class="instructions__name--icon-label">Instructions</span>
       <span class="demo-icon icon-key instructions__name--icon" data-icon="key" aria-hidden="true"></span>
     </h2>                           
-    <article class="instructions__content">
-      <p>Pick a card.</p>
-      <p>Find a sibling.</p>
-      <p>Repeat.</p>
-      <p>Enjoy :)</p>
+    <ul class="instructions__content">
+      <li class="instructions__content--item">Pick a card.</li>
+      <li class="instructions__content--item">Find a sibling.</li>
+      <li class="instructions__content--item">Repeat.</li>
+      <li class="instructions__content--item">Enjoy :)</li>
       <br>
-      <p>Use buttons and the navigation panel to find what you're looking for.</p>
-     </article>
+      <li class="instructions__content--item">Use buttons and the navigation panel to find what you're looking for.</li>
+    </ul>
   </section>
 </template>
 
