@@ -602,7 +602,7 @@ main {
         transition: all .3s ease-in-out;
         display: table;
         vertical-align: middle;
-        &--icon {
+        &:before {
             display: table-cell;
             vertical-align: middle;
         }
