@@ -685,6 +685,9 @@ main {
     @include flex-row-jbetween;
     &__photo {
         border: 1px solid $stark;
+        &--small {
+            display: none;
+        }
     }
     &__content {
         margin-left: 3vw;

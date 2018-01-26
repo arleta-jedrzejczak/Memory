@@ -210,12 +210,17 @@ $plum: #2E1733;
     .allabout {
         flex-direction: row;
         &__photo {
-            content: url('images/images/about-photo-s-square.png');
             width: 50%;
             height: 50%;
             margin-left: 5vw;
             margin-right: 5vw;
             margin-bottom: 5vw;
+            &--small {
+                display: block;
+            }
+            &--big {
+                display: none;
+            }
         }
         &__content {
             margin-left: 0;
@@ -325,7 +330,6 @@ $plum: #2E1733;
         .allabout {
             flex-direction: column;
             &__photo {
-                content: url(../../images/about-photo-m-square.png);
                 width: 90%;
                 height: 90%;
                 margin-left: 5vw;
