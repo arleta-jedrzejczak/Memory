@@ -4,9 +4,9 @@
             <span class="skills__name--icon-label">My skills</span>
             <span class="demo-icon icon-cog-alt about__name--icon" data-icon="skills" aria-hidden="true"></span>
         </h2>
-        <ul class="skills__lists">
+        <article class="skills__lists">
 
-            <li class="skills__lists--description">Use and learn:</li>
+            <p class="skills__lists--description">Use and learn:</p>
             <ul class="my-skills">
                 <li class="my-skills__item">
                     <div class="my-skills__item--devicon" title="HTML5">
@@ -52,7 +52,7 @@
                 </li>
             </ul>
 
-            <li class="skills__lists--description">Just starting to learn:</li>
+            <p class="skills__lists--description">Just starting to learn:</p>
             <ul class="my-skills">
                 <li class="my-skills__item">
                     <div class="my-skills__item--devicon" title="Bootstrap">
@@ -84,7 +84,7 @@
                 </li>
             </ul>
 
-            <li class="skills__lists--description">Scholarships, workshops and certifications:</li>
+            <p class="skills__lists--description">Scholarships, workshops and certifications:</p>
             <ul class="my-skills">
                 <li class="my-skills__item">
                     <div class="my-skills__item--devicon" title="Google Udacity Scholar 2017">
@@ -123,7 +123,7 @@
                 </li>
             </ul>
 
-            <li class="skills__lists--description">My tools:</li>
+            <p class="skills__lists--description">My tools:</p>
             <ul class="my-skills">
                 <li class="my-skills__item">
                     <div class="my-skills__item--devicon" title="Photoshop">
@@ -141,7 +141,7 @@
                 </li>
             </ul>
 
-            <li>class="skills__lists--description">Soft skills:</li>
+            <p class="skills__lists--description">Soft skills:</p>
             <ul class="my-skills">
                 <li class="my-skills__item">
                     <div class="my-skills__item--devicon" title="Communiaction">
@@ -174,7 +174,7 @@
 
             </ul>
 
-        </ul>
+        </article>
     </section>
 </template>
 
