@@ -22,7 +22,7 @@
 export default {
   data() {
     return {
-      img: '<img src="images/about-photo-m.png" alt="my portrait" class="allabout__photo allabout__photo--big">',
+      img: '<img src="images/about-photo-s.png" alt="my portrait" class="allabout__photo allabout__photo--big">',
       imgsquare: '<img src="images/about-photo-m-square.png" alt="my portrait" class="allabout__photo allabout__photo--small">'      
     }
   },
