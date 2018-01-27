@@ -21,7 +21,7 @@ $plum: #2E1733;
     -webkit-border-radius: 25px;
     border-radius: 25px;
     font-size: 16px;
-    padding: 12px;
+    padding: 8px;
     height: 40px;
     cursor: pointer;
 }
@@ -230,6 +230,30 @@ $plum: #2E1733;
     }
     to {
         transform:rotate(0deg);
+    }
+}
+
+@-webkit-keyframes pulse {
+    to {
+        box-shadow: 0 0 0 15px rgba(232, 76, 61, 0);
+    }
+}
+
+@-moz-keyframes pulse {
+    to {
+        box-shadow: 0 0 0 15px rgba(232, 76, 61, 0);
+    }
+}
+
+@-ms-keyframes pulse {
+    to {
+        box-shadow: 0 0 0 15px rgba(232, 76, 61, 0);
+    }
+}
+
+@keyframes pulse {
+    to {
+        box-shadow: 0 0 0 15px rgba(232, 76, 61, 0);
     }
 }
 
@@ -452,9 +476,9 @@ main {
         border: none;
         background-color: $plum;
         @include button;
-        -moz-box-shadow: 1px 1px 1px $stark;
-        -webkit-box-shadow:  1px 1px 1px $stark;
-        box-shadow:  1px 1px 1px $stark;
+        -moz-box-shadow: 0 0 0 $stark;
+        -webkit-box-shadow:  0 0 0 $stark;
+        box-shadow: 0 0 0 $stark;
         &--back {
             background-color: $fuschia;
             &:before {
@@ -464,9 +488,20 @@ main {
         }
         &--info {
             background-color: $jewel;
+            -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+            -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+            -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+            animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
             &:before {
                 content: '\e805';
                 @include fontello;
+                box-shadow: 0 0 0 0 rgba(#5a99d4, .5);
+            }
+            &:hover {
+                -webkit-animation: none;
+                -moz-animation: none;
+                -ms-animation: none;
+                animation: none;
             }
         }
         &--link {
@@ -579,8 +614,7 @@ main {
         box-sizing: border-box;
         overflow: visible;
         text-align: center;
-        //padding-top: 1vw;
-        border: 3px solid $vermillion;
+        border: 1px solid $vermillion;
         border-radius: 5px;
         margin: 1vw;
         margin-bottom: 2vw;
