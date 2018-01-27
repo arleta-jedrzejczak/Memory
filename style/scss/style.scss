@@ -660,6 +660,7 @@ main {
     }
     &__content {
         @include flex-column-acenter;
+        text-align: center;
     }
 }
 
