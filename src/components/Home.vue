@@ -92,7 +92,6 @@ export default {
             if(vm.lock === false && card.checked === true) {
                 vm.lock = true;
                 if(card.passive === false){
-                    vm.lock = true;
                     setTimeout(flipCard, 250);
                     if(vm.oneVisible === false) { //first card chosen
                         vm.oneVisible = true;
