@@ -682,9 +682,17 @@ main {
     &__name {
         @include header2;
     }
-    &__content--item {
-        @include flex-column-acenter;
-        text-align: center;
+    &__content {
+        @include flex-column;
+        &--item {
+            text-align: left;
+        }
+        &--important {
+            text-align: left;
+        }
+        &--underline {
+            border-bottom: 1px solid $stark;
+        }
     }
 }
 
