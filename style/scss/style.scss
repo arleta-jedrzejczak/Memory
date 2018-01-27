@@ -316,17 +316,6 @@ body {
     margin-top: 1vw;
     background: $plum;
     margin-bottom: 1vw;
-    &__logo {
-        &--size:before {
-            font-size: 250%;
-        }
-        &--visuallyhidden {
-            @include visuallyhidden;
-        }
-        &--mobile {
-            display: none;
-        }
-    }
     &__name {
         cursor: pointer;
         padding-left: 1vw;

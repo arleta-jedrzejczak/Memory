@@ -295,14 +295,6 @@ $plum: #2E1733;
             margin-top: 0;
             flex-wrap: wrap;
             margin-bottom: 5vw;
-            &__logo {
-                display: none;
-                &--mobile {
-                    align-self: flex-start;
-                    display: inline-flex;
-                    flex-grow: 9;
-                }
-            }
             &__name {
                 padding: 1vw;
                 width: 100%;
