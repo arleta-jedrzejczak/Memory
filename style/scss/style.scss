@@ -658,7 +658,7 @@ main {
     &__name {
         @include header2;
     }
-    &__content {
+    &__content--item {
         @include flex-column-acenter;
         text-align: center;
     }
