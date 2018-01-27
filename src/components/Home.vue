@@ -89,7 +89,7 @@ export default {
                 vm.lock = false;
             }
 
-            if(vm.lock === false) { // && card.checked === true
+            if(vm.lock === false && card.checked === true) {
                 vm.lock = true;
                 if(card.passive === false){
                     vm.lock = true;
