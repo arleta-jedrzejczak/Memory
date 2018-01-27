@@ -21,7 +21,7 @@ $plum: #2E1733;
     -webkit-border-radius: 25px;
     border-radius: 25px;
     font-size: 16px;
-    padding: 12px;
+    padding: 8px;
     height: 40px;
     cursor: pointer;
 }
@@ -56,7 +56,7 @@ $plum: #2E1733;
 @mixin fontello {
     font-family: fontello;
     position: absolute;
-    top: 11px;
+    top: 8px;
     left: -30px;
     transition: all 200ms ease;
 }
@@ -233,6 +233,30 @@ $plum: #2E1733;
     }
 }
 
+@-webkit-keyframes pulse {
+    to {
+        box-shadow: 0 0 0 15px rgba(232, 76, 61, 0);
+    }
+}
+
+@-moz-keyframes pulse {
+    to {
+        box-shadow: 0 0 0 15px rgba(232, 76, 61, 0);
+    }
+}
+
+@-ms-keyframes pulse {
+    to {
+        box-shadow: 0 0 0 15px rgba(232, 76, 61, 0);
+    }
+}
+
+@keyframes pulse {
+    to {
+        box-shadow: 0 0 0 15px rgba(232, 76, 61, 0);
+    }
+}
+
 
 //SITE
 
@@ -262,6 +286,16 @@ body {
     z-index: 1000;
     background: $void;
     /* display: none; */
+}
+
+.load-text {
+    @include flex-row-jcenter;
+    margin-top: 25vh;
+    color: $stark;
+    font-family: 'Vollkorn SC', serif;
+    font-size: 200%;
+    text-align: center;
+    line-height: 150%;
 }
 
 .load {
@@ -452,18 +486,15 @@ main {
         border: none;
         background-color: $plum;
         @include button;
-        -moz-box-shadow: 1px 1px 1px $stark;
-        -webkit-box-shadow:  1px 1px 1px $stark;
-        box-shadow:  1px 1px 1px $stark;
         &--back {
-            background-color: $fuschia;
+            background-color: $jewel;
             &:before {
                 content: '\e803';
                 @include fontello;
             }
         }
         &--info {
-            background-color: $jewel;
+            background-color: $fuschia;
             &:before {
                 content: '\e805';
                 @include fontello;
@@ -511,12 +542,7 @@ main {
             }
         }
         &--end {
-            background-color: $stark;
-            color: $void;
-            text-shadow: 0px 0px $void;
-            -moz-box-shadow: 1px 1px 1px $vermillion;
-            -webkit-box-shadow:  1px 1px 1px $vermillion;
-            box-shadow:  1px 1px 1px $vermillion;
+            background-color: $fuschia;
             &:before {
                 content: '\e804';
                 @include fontello;
@@ -532,6 +558,21 @@ main {
 }
 
 //Vue toggler's class => appearing and change buttons
+.pulse {
+    -moz-box-shadow: 0 0 0 $stark;
+    -webkit-box-shadow:  0 0 0 $stark;
+    box-shadow:  0 0 0 $stark;
+    -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    &:hover {
+        -webkit-animation: none;
+        -moz-animation: none;
+        -ms-animation: none;
+        animation: none;
+    }
+}
 .back {
     visibility: hidden;
 }
@@ -548,11 +589,6 @@ main {
     background-color: $vermillion;
     -webkit-filter: brightness(120%);
     filter: brightness(120%);
-    -moz-box-shadow: 1px 1px 1px $stark;
-    -webkit-box-shadow:  1px 1px 1px $stark;
-    box-shadow:  1px 1px 1px $stark;
-    color: $void;
-    text-shadow: 0px 0px $void;
 }
 
 
@@ -579,12 +615,11 @@ main {
         box-sizing: border-box;
         overflow: visible;
         text-align: center;
-        //padding-top: 1vw;
-        border: 3px solid $vermillion;
+        border: 1px solid $vermillion;
         border-radius: 5px;
         margin: 1vw;
         margin-bottom: 2vw;
-        width: 10vw;
+        width: 20%;
         height: 10vw;
         cursor: pointer;
         transition: all .3s ease-in-out;

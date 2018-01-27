@@ -71,7 +71,11 @@ export default {
             function changeCardFalse() { //cards don't match
                 vm.firstCard.checked = true;
                 card.checked = true;
+                vm.firstCardProperty = '';
+                vm.firstCardId = '';
+                vm.firstCard = '';
                 vm.lock = false;
+                console.log(vm.lock);
             }
 
             function changeCardTrue() { //cards match
@@ -80,41 +84,50 @@ export default {
                 if(vm.firstCardId > 7 && vm.firstCardId < 10) { //GitHub
                     changeGithub(true);
                 }
-                else if(vm.firstCardId > 9) { //LinedIn
+                else if(vm.firstCardId > 9) { //LinkedIn
                     changeLinked(true);
                 }
                 else { // other components
                     changeComponent(vm.firstCardProperty);
                 }
                 vm.lock = false;
+                console.log(vm.lock);
             }
 
-            if(vm.lock === false && card.checked === true) {
+            if(vm.lock === false) {
                 vm.lock = true;
-                if(card.passive === false){
-                    setTimeout(flipCard, 250);
-                    if(vm.oneVisible === false) { //first card chosen
-                        vm.oneVisible = true;
-                        vm.firstCardProperty = card.property;
-                        vm.firstCardId = card.id;
-                        vm.firstCard = vm.cards.find(function(c) { 
-                            return c.id === vm.firstCardId });
-                        vm.lock = false;
-                    }
-                    else { //second card chosen
-                        if(card.property === vm.firstCardProperty) { //similarity
-                            setTimeout(changeCardTrue, 750);
-                            vm.pairs--;
-                            if(vm.pairs === 0) {
-                                setTimeout(winnerAlert, 1000);
+                console.log(vm.lock);
+                if(card.id !== vm.firstCardId) {
+                    if(card.passive === false){
+                        setTimeout(flipCard, 250);
+                        if(vm.oneVisible === false) { //first card chosen
+                            vm.oneVisible = true;
+                            vm.firstCardProperty = card.property;
+                            vm.firstCardId = card.id;
+                            vm.firstCard = vm.cards.find(function(c) { 
+                                return c.id === vm.firstCardId });
+                            vm.lock = false;
+                            console.log(vm.lock);
+                        }
+                        else { //second card chosen
+                            if(card.property === vm.firstCardProperty) { //similarity
+                                setTimeout(changeCardTrue, 750);
+                                vm.pairs--;
+                                if(vm.pairs === 0) {
+                                    setTimeout(winnerAlert, 1000);
+                                }
                             }
+                            else { //lack of similarity
+                                setTimeout(changeCardFalse, 1000);
+                            }
+                            vm.turnCounter++;
+                            vm.oneVisible = false;
                         }
-                        else { //lack of similarity
-                            setTimeout(changeCardFalse, 1000);
-                        }
-                        vm.turnCounter++;
-                        vm.oneVisible = false;
                     }
+                }
+                else {
+                    vm.lock = false;
+                    console.log(vm.lock);
                 }
             }
         }

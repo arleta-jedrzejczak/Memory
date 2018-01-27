@@ -1,5 +1,6 @@
 <template>
     <div id="loader-wrapper" class="loader-wrapper">
+      <p class="load-text">Visit 'How to play?' section, please :)</p>
       <div class="load"></div>
     </div>
 </template>
