@@ -547,12 +547,6 @@ main {
                 content: '\e804';
                 @include fontello;
             }
-            &:hover {
-                color: $void;
-            }
-        }
-        &--restart {
-            font-weight: 600;
         }
     }
 }
@@ -615,7 +609,7 @@ main {
         box-sizing: border-box;
         overflow: visible;
         text-align: center;
-        border: 1px solid $vermillion;
+        border: 3px solid $vermillion;
         border-radius: 5px;
         margin: 1vw;
         margin-bottom: 2vw;
@@ -658,7 +652,7 @@ main {
     filter: brightness(70%);
     font-size: 0;
     background: linear-gradient(70deg, $fuschia, $void, $jewel, $stark);
-    border-color: $stark;
+    border: 1px solid $stark;
 }
 
 .passive {
@@ -682,16 +676,22 @@ main {
     &__name {
         @include header2;
     }
-    &__content {
-        @include flex-column;
+}
+
+.rules {
+    &__important {
+        text-align: center;
+        font-weight: 600;
+        color: $vermillion;
+    }
+    &__item {
+        text-align: center;
+    }
+    &__list {
         &--item {
-            text-align: left;
-        }
-        &--important {
-            text-align: left;
         }
         &--underline {
-            border-bottom: 1px solid $stark;
+            border-bottom: 1px dashed $stark;
         }
     }
 }
@@ -733,6 +733,10 @@ main {
         margin-left: 3vw;
         &--bold {
             font-weight: 600;
+            color: $vermillion;
+        }
+        &--underline {
+            color: $vermillion;
         }
     }
 }
@@ -843,20 +847,7 @@ main {
             font-size: 110%;
             padding: 1vw;
             border-bottom: 1px solid $stark;
-        }
-    }
-}
-
-
-.main-skills {
-    @include list;
-    &__item {
-        padding: 2vw;
-        &--devicon {
-            font-size: 400%;
-        }
-        &--visuallyhidden {
-            @include visuallyhidden;
+            text-align: center;
         }
     }
 }
@@ -876,6 +867,7 @@ main {
     }
     &__description {
         font-size: 70%;
+        text-align: center;
     }
 }
 

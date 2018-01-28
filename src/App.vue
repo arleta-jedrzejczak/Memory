@@ -5,7 +5,7 @@
     <navbar v-bind:component='component' v-on:changeComponent="updateComponent($event)"/>
     <main>
       <buttons v-on:changeComponent="updateComponent($event)" v-bind:back="back" v-bind:github="github" v-bind:linked="linked" v-bind:turnCount="turnCount" v-bind:info="info">
-        <button class="buttons__button buttons__button--end" v-bind:class="{restart: restart}" v-if="end" v-on:click="restartGame"><span v-html="link"></span><span v-if="turns">{{ turnCount }} turns!</span></button>
+        <div class="buttons__button buttons__button--end" v-bind:class="{restart: restart}" v-if="end" v-on:click="restartGame"><span v-html="link"></span><span v-if="turns">{{ turnCount }} turns!</span></div>
       </buttons>
       <transition>
         <keep-alive v-bind:include=alive>
@@ -52,7 +52,7 @@ export default {
       back: false,
       info: true,
       end: false,
-      link: 'You won in ',
+      link: 'Won in ',
       turns: true,
       restart: false,
       mail: '',
@@ -68,7 +68,7 @@ export default {
       vm.end = false;
       vm.turns = true;
       vm.restart = false;
-      vm.link = 'You won in ';
+      vm.link = 'Won in ';
       vm.linked = false;
       vm.github = false;
       vm.back = false;
@@ -81,7 +81,7 @@ export default {
     },
     newLink: function(link) {
       const vm = this;
-      vm.link = '<span class="buttons__button--restart">RESTART GAME</span>';
+      vm.link = '<span>RESTART GAME</span>';
       vm.turns = false;
       vm.restart = true;
     },

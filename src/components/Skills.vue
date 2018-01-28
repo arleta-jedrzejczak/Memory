@@ -6,7 +6,7 @@
         </h2>
         <article class="skills__lists">
 
-            <p class="skills__lists--description">Use and learn:</p>
+            <p class="skills__lists--description">Using and still learning:</p>
             <ul class="my-skills">
                 <li class="my-skills__item">
                     <div class="my-skills__item--devicon" title="HTML5">

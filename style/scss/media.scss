@@ -106,6 +106,9 @@ $plum: #2E1733;
 
 @media (max-width: 767px) {
 
+    .load-text {
+        margin-top: 20vh;
+    }
 
 
     .grid {
@@ -179,6 +182,9 @@ $plum: #2E1733;
             height: 15vw;
             min-height: 0;
             min-width: 0;
+            &--icon {
+                font-size: 250%;
+            }
         }
         &__counter {
             margin-bottom: 5vw;
@@ -286,53 +292,58 @@ $plum: #2E1733;
 }
 
 @media (max-width: 500px) {
-    //SECTION: HEAD (WITH GAME)
 
-        //HEADER
-        .header {
-            flex-direction: column;
-            align-items: flex-start;
-            margin-top: 0;
-            flex-wrap: wrap;
-            margin-bottom: 5vw;
-            &__name {
-                padding: 1vw;
-                width: 100%;
-                flex-grow: 2;
-                font-size: 170%;
-            }
-            &__icons {
-                display: inline-flex;
-                align-self: flex-end;
-                flex-grow: 1;
-            }
-            &__icon--size:before {
+    .load-text {
+        margin-top: 15vh;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 0;
+        flex-wrap: wrap;
+        margin-bottom: 5vw;
+        &__name {
+            padding: 1vw;
+            width: 100%;
+            flex-grow: 2;
+            font-size: 170%;
+        }
+        &__icons {
+            display: inline-flex;
+            align-self: flex-end;
+            flex-grow: 1;
+        }
+        &__icon--size:before {
+            font-size: 200%;
+        }
+    }
+
+    .game {
+        width: 100%;
+        &__card {
+            width: 20vw;
+            height: 20vw;
+            min-height: 0;
+            min-width: 0;
+            margin: 1vw;
+            &--icon {
                 font-size: 200%;
             }
         }
+    }
 
-        .game {
-            width: 100%;
-            &__card {
-                width: 20vw;
-                height: 20vw;
-                min-height: 0;
-                min-width: 0;
-                margin: 1vw;
-            }
+    .allabout {
+        flex-direction: column;
+        &__photo {
+            width: 90%;
+            height: 90%;
+            margin-left: 5vw;
+            margin-right: 5vw;
+            margin-bottom: 5vw;
         }
-
-        .allabout {
-            flex-direction: column;
-            &__photo {
-                width: 90%;
-                height: 90%;
-                margin-left: 5vw;
-                margin-right: 5vw;
-                margin-bottom: 5vw;
-            }
-            &__content {
-                margin-left: 0;
-            }
+        &__content {
+            margin-left: 0;
         }
+    }
 }
