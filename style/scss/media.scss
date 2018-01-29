@@ -1,12 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Oxygen');
 @import url('https://fonts.googleapis.com/css?family=Vollkorn+SC');
 
-$void: #0E0B16;
-$fuschia: #A239CA;
-$jewel: #4717F6;
-$stark: #E7DFDD;
-$vermillion: #fc4a1a;
-$plum: #2E1733;
+$dark-primary: #303F9F;
+$primary: #3F51B5;
+$light-primary: #7D88C1;
+$text-icons: #FFFFFF;
+$secondary-text: #757575;
+$accent: #8BC34A;
+$primary-text: #212121;
+$divider: #BDBDBD;
+$additional: #DCEDC8;
+$dark-additonal: #689F38;
+$super: #FF5722;
 
 
 
@@ -17,7 +22,7 @@ $plum: #2E1733;
     text-align: center;
     text-decoration: none;
     width: 160px;
-    color: $stark;
+    color: $text-icons;
     -moz-border-radius: 25px;
     -webkit-border-radius: 25px;
     border-radius: 25px;
@@ -29,7 +34,7 @@ $plum: #2E1733;
 
 @mixin button--hover {
     text-decoration: none;
-    color: $stark;
+    color: $text-icons;
 }
 
 @mixin header2 {
@@ -132,11 +137,9 @@ $plum: #2E1733;
             border-right: none;
             margin-bottom: 0;
             padding: 0;
+            margin-top: 5vw;
             &:hover {
                 border-right: none;
-            }
-            &--size {
-                padding-bottom: 10vw;
             }
         }
         &__description {
@@ -317,6 +320,52 @@ $plum: #2E1733;
         &__icon--size:before {
             font-size: 200%;
         }
+    }
+
+    .navigation-bar {
+        padding-top: 0;
+        &__icons {
+            display: block;
+            padding-left: 2vw;
+            &--menu {
+
+            }
+            &--exit {
+
+            }
+        }
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        height: auto;
+        &__item {
+            margin-bottom: 0;
+        }
+        &__icon {
+            margin-top: 0;
+            &--cirle {
+            width: 55px;
+            height: 55px;
+            }
+        }
+    }
+
+
+    //Vue toggler's class => appearing navbar
+    .hide {
+        display: none;
+    }
+
+    .navmenu {
+        display: none;
+    }
+
+    .navexit {
+        display: none;
     }
 
     .game {

@@ -2,11 +2,11 @@
     <section id="skills" class="skills">
         <h2 class="skills__name">
             <span class="skills__name--icon-label">My skills</span>
-            <span class="demo-icon icon-cog-alt about__name--icon" data-icon="skills" aria-hidden="true"></span>
+            <span class="material-icons about__name--icon" data-icon="skills" aria-hidden="true">&#xE869;</span>
         </h2>
         <article class="skills__lists">
 
-            <p class="skills__lists--description">Using and still learning:</p>
+            <h3 class="skills__lists--description">Using and still learning:</h3>
             <ul class="my-skills">
                 <li class="my-skills__item">
                     <div class="my-skills__item--devicon" title="HTML5">
@@ -31,7 +31,7 @@
                 </li>
                 <li class="my-skills__item">
                     <div class="my-skills__item--devicon" title="RWD">
-                        <span class="demo-icon icon-mobile"></span>
+                        <span class="my-skills__item--material material-icons">&#xE1B1;</span>
                         <span class="my-skills__item--visuallyhidden">mobile icon</span>
                     </div>
                     <p class="my-skills__description">RWD</p>
@@ -52,7 +52,7 @@
                 </li>
             </ul>
 
-            <p class="skills__lists--description">Just starting to learn:</p>
+            <h3 class="skills__lists--description">Just starting to learn:</h3>
             <ul class="my-skills">
                 <li class="my-skills__item">
                     <div class="my-skills__item--devicon" title="Bootstrap">
@@ -84,7 +84,7 @@
                 </li>
             </ul>
 
-            <p class="skills__lists--description">Scholarships, workshops and certifications:</p>
+            <h3 class="skills__lists--description">Scholarships, workshops and certifications:</h3>
             <ul class="my-skills">
                 <li class="my-skills__item">
                     <div class="my-skills__item--devicon" title="Google Udacity Scholar 2017">
@@ -95,7 +95,7 @@
                 </li>
                 <li class="my-skills__item">
                     <div class="my-skills__item--devicon" title="Learn IT, Girl 3rd edition">
-                        <span class="demo-icon icon-code"></span>
+                        <span class="my-skills__item--material material-icons">&#xE1B0;</span>
                         <span class="my-skills__item--visuallyhidden">learn it girl third edition icon</span>
                     </div>
                     <p class="my-skills__description">Learn IT, Girl 3rd edition</p>
@@ -123,7 +123,7 @@
                 </li>
             </ul>
 
-            <p class="skills__lists--description">My tools:</p>
+            <h3 class="skills__lists--description">My tools:</h3>
             <ul class="my-skills">
                 <li class="my-skills__item">
                     <div class="my-skills__item--devicon" title="Photoshop">
@@ -141,32 +141,32 @@
                 </li>
             </ul>
 
-            <p class="skills__lists--description">Soft skills:</p>
+            <h3 class="skills__lists--description">Soft skills:</h3>
             <ul class="my-skills">
                 <li class="my-skills__item">
                     <div class="my-skills__item--devicon" title="Communiaction">
-                        <span class="demo-icon icon-megaphone"></span>
+                        <span class="my-skills__item--material material-icons">&#xE023;</span>
                         <span class="my-skills__item--visuallyhidden">communication icon</span>
                     </div>
                     <p class="my-skills__description">Communication</p>
                 </li>
                 <li class="my-skills__item">
                     <div class="my-skills__item--devicon" title="Teamwork">
-                        <span class="demo-icon icon-users"></span>
+                        <span class="my-skills__item--material material-icons">&#xE7F0;</span>
                         <span class="my-skills__item--visuallyhidden">teamwork icon</span>
                     </div>
                     <p class="my-skills__description">Teamwork</p>
                 </li>
                 <li class="my-skills__item">
                     <div class="my-skills__item--devicon" title="Positive attitude">
-                        <span class="demo-icon icon-thumbs-up"></span>
+                        <span class="my-skills__item--material material-icons">&#xE7F2;</span>
                         <span class="my-skills__item--visuallyhidden">positive attitude icon</span>
                     </div>
                     <p class="my-skills__description">Positive attitude</p>
                 </li>
                 <li class="my-skills__item">
                     <div class="my-skills__item--devicon" title="Responsibility">
-                        <span class="demo-icon icon-attention-circled"></span>
+                        <span class="my-skills__item--material material-icons">&#xE8E8;</span>
                         <span class="my-skills__item--visuallyhidden">responsibility icon</span>
                     </div>
                     <p class="my-skills__description">Responsibility</p>

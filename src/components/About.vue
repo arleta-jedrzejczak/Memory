@@ -2,7 +2,7 @@
   <section id="about" class="about">
     <h2 class="about__name">
       <span class="about__name--icon-label">About me</span>
-      <span class="demo-icon icon-user about__name--icon" data-icon="about" aria-hidden="true"></span>
+      <span class="material-icons about__name--icon" data-icon="about" aria-hidden="true">&#xE87C;</span>
     </h2>
     <div class="allabout">
         <span v-html="img"></span>

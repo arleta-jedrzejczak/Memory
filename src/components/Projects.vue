@@ -2,7 +2,7 @@
     <section id="projects" class="my-projects">
         <h2 class="my-projects__name">
             <span class="my-projects__name--icon-label">My projects</span>
-            <span class="demo-icon icon-file-code my-projects__name--icon" data-icon="projects" aria-hidden="true"></span>
+            <span class="material-icons my-projects__name--icon" data-icon="projects" aria-hidden="true">&#xE86F;</span>
         </h2>
         <ul class="projects-list">
             <li

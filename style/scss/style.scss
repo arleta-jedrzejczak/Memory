@@ -1,12 +1,16 @@
-@import url('https://fonts.googleapis.com/css?family=Oxygen');
-@import url('https://fonts.googleapis.com/css?family=Vollkorn+SC&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab&subset=latin-ext');
 
-$void: #0E0B16;
-$fuschia: #A239CA;
-$jewel: #4717F6;
-$stark: #E7DFDD;
-$vermillion: #fc4a1a;
-$plum: #2E1733;
+$dark-primary: #303F9F;
+$primary: #3F51B5;
+$light-primary: #7D88C1;
+$text-icons: #FFFFFF;
+$secondary-text: #757575;
+$accent: #8BC34A;
+$primary-text: #212121;
+$divider: #BDBDBD;
+$additional: #DCEDC8;
+$dark-additonal: #689F38;
+$super: #FF5722;
 
 
 //MIXINS
@@ -16,7 +20,7 @@ $plum: #2E1733;
     text-align: center;
     text-decoration: none;
     width: 200px;
-    color: $stark;
+    color: $text-icons;
     -moz-border-radius: 25px;
     -webkit-border-radius: 25px;
     border-radius: 25px;
@@ -28,7 +32,7 @@ $plum: #2E1733;
 
 @mixin button--hover {
     text-decoration: none;
-    color: $stark;
+    color: $text-icons;
 }
 
 @mixin header2 {
@@ -39,6 +43,10 @@ $plum: #2E1733;
     width: 100%;
     padding: 2vw;
     text-align: center;
+}
+
+@mixin icon {
+    font-size: 100%;
 }
 
 @mixin section-size {
@@ -268,9 +276,9 @@ html, body {
 body {
     @include flex-column;
     box-sizing: border-box;
-    background-color: $void;
-    font-family: 'Oxygen', Arial, Helvetica, sans-serif;
-    color: $stark;
+    background-color: $primary;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    color: $text-icons;
     letter-spacing: 0.03em;
     line-height: 150%;
 }
@@ -284,15 +292,16 @@ body {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: $void;
+    background: $primary;
     /* display: none; */
 }
 
 .load-text {
+    padding: 2vw;
     @include flex-row-jcenter;
     margin-top: 25vh;
-    color: $stark;
-    font-family: 'Vollkorn SC', serif;
+    color: $text-icons;
+    font-family: 'Roboto Slab', serif;
     font-size: 200%;
     text-align: center;
     line-height: 150%;
@@ -306,7 +315,7 @@ body {
     height: 100px;
     width: 8vmax;
     height: 8vmax;
-    border-right: 4px solid $fuschia;
+    border-right: 4px solid $light-primary;
     border-radius: 100%;
     animation: spinRight 800ms linear infinite;
     &:before, &:after {
@@ -317,7 +326,7 @@ body {
         position: absolute;
         top: calc(50% - 3vmax);
         left: calc(50% - 3vmax);
-        border-left: 3px solid $fuschia;
+        border-left: 3px solid $light-primary;
         border-radius: 100%;
         animation: spinLeft 800ms linear infinite;
     }
@@ -327,7 +336,7 @@ body {
         top: calc(50% - 2vmax);
         left: calc(50% - 2vmax);
         border: 0;
-        border-right: 2px solid $fuschia;
+        border-right: 2px solid $light-primary;
         animation: none;
     }
 }
@@ -338,6 +347,7 @@ body {
     box-sizing: border-box;
     flex: 1 0 auto;
     overflow: visible;
+    background-color: $light-primary;
 }
 
 
@@ -347,9 +357,8 @@ body {
     box-sizing: border-box;
     @include flex-row-acenter;
     padding: 1vw;
-    margin-top: 1vw;
-    background: $plum;
-    margin-bottom: 1vw;
+    background: $dark-primary;
+    padding-bottom: 1vw;
     &__name {
         cursor: pointer;
         padding-left: 1vw;
@@ -358,24 +367,20 @@ body {
         flex-grow: 6;
         word-break: keep-all;
         white-space: nowrap;
-        font-family: 'Vollkorn SC', serif;
+        font-family: 'Roboto Slab', serif;
         transition: all .3s ease-in-out;
         &:hover {
-            -webkit-filter: brightness(110%);
-            filter: brightness(110%);
-            text-shadow: 1px 1px 2px $stark;
+            color: $additional;
         }
         &:active {
-            -webkit-filter: brightness(110%);
-            filter: brightness(110%);
-            text-shadow: 1px 1px 2px $stark;
+            color: $additional;
         }
     }
     &__icons {
         @include flex-row;
     }
     &__icon {
-        color: $stark;
+        color: $text-icons;
         flex-grow: 4;
         transition: all .3s ease-in-out;
         &:hover {
@@ -404,7 +409,10 @@ body {
 //NAVIGATION
 
 .navigation-bar {
-    margin-top: 1vw;
+    padding-top: 1vw;
+    &__icons {
+        display: none;
+    }
 }
 
 .navbar {
@@ -426,23 +434,33 @@ body {
         }
     }
     &__icon {
-        border-right: 2px solid $plum;
+        border-right: 2px solid $dark-primary;
         padding: 30px 20px; 
-        margin-bottom: -50px;
-        width: 50px;
+        margin-bottom: -70px;
+        width: 70px;
+        display: table;
+        vertical-align: middle;
         &:hover {
-            border-right: 2px solid $jewel;
+            border-right: 2px solid $accent;
+        }
+        &--cirle {
+            width: 70px;
+            height: 70px;
+            transition: all .3s ease-in-out;
+            background-color: $dark-primary;
+            border-radius: 50%;
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
         }
         &--size {
-            &:before {
-                font-size: 250%;
-                display: block;  
-            }
+            font-size: 250%;
+            display: block;  
         }
     }
     &__description {
         display: block;
-        margin-left: 100px;
+        margin-left: 120px;
         padding-left: 20px;
     }
 }
@@ -484,17 +502,23 @@ main {
         margin-left: 1vh;
         margin-right: 1vh;
         border: none;
-        background-color: $plum;
+        background-color: $dark-primary;
         @include button;
+        -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 
+            0 1px 5px 0 rgba(0, 0, 0, 0.12), 
+            0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 
+            0 1px 5px 0 rgba(0, 0, 0, 0.12), 
+            0 3px 1px -2px rgba(0, 0, 0, 0.2);
         &--back {
-            background-color: $jewel;
+            background-color: $secondary-text;
             &:before {
                 content: '\e803';
                 @include fontello;
             }
         }
         &--info {
-            background-color: $fuschia;
+            background-color: $accent;
             &:before {
                 content: '\e805';
                 @include fontello;
@@ -502,7 +526,7 @@ main {
         }
         &--link {
             text-decoration: none;
-            color: $stark;
+            color: $text-icons;
         }
         &--github {
             &:before {
@@ -533,7 +557,7 @@ main {
             -webkit-filter: brightness(120%);
             filter: brightness(120%);
             transform: scale(1.05);
-            border: 1px solid $stark;
+            border: 1px solid $text-icons;
             -moz-box-shadow: none;
             -webkit-box-shadow:  none;
             box-shadow:  none;
@@ -542,7 +566,7 @@ main {
             }
         }
         &--end {
-            background-color: $fuschia;
+            background-color: $divider;
             &:before {
                 content: '\e804';
                 @include fontello;
@@ -553,9 +577,9 @@ main {
 
 //Vue toggler's class => appearing and change buttons
 .pulse {
-    -moz-box-shadow: 0 0 0 $stark;
-    -webkit-box-shadow:  0 0 0 $stark;
-    box-shadow:  0 0 0 $stark;
+    -moz-box-shadow: 0 0 0 $accent;
+    -webkit-box-shadow:  0 0 0 $accent;
+    box-shadow:  0 0 0 $accent;
     -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
     -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
     -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
@@ -580,7 +604,7 @@ main {
     visibility: hidden;
 }
 .restart {
-    background-color: $vermillion;
+    background-color: $super;
     -webkit-filter: brightness(120%);
     filter: brightness(120%);
 }
@@ -606,10 +630,12 @@ main {
         margin-bottom: 2vw;
     }
     &__card {
+        color: $super;
         box-sizing: border-box;
+        background-color: $light-primary;
         overflow: visible;
         text-align: center;
-        border: 3px solid $vermillion;
+        border: 3px solid $accent;
         border-radius: 5px;
         margin: 1vw;
         margin-bottom: 2vw;
@@ -619,10 +645,22 @@ main {
         transition: all .3s ease-in-out;
         display: table;
         vertical-align: middle;
+        -webkit-filter: brightness(120%);
+        filter: brightness(120%);
+        -webkit-box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 
+            0 6px 30px 5px rgba(0, 0, 0, 0.12), 
+            0 8px 10px -5px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 
+            0 6px 30px 5px rgba(0, 0, 0, 0.12), 
+            0 8px 10px -5px rgba(0, 0, 0, 0.3);
         &--icon {
             display: table-cell;
             vertical-align: middle;
             font-size: 300%;
+        }
+        &--iconmaterial {
+            font-size: 100%;
+            text-align: center;
         }
         &:hover {-webkit-filter: brightness(120%);
             filter: brightness(120%);
@@ -648,22 +686,21 @@ main {
 
 //CARDS
 .checked {
-    -webkit-filter: brightness(70%);
-    filter: brightness(70%);
-    font-size: 0;
-    background: linear-gradient(70deg, $fuschia, $void, $jewel, $stark);
-    border: 1px solid $stark;
+    -webkit-filter: brightness(100%);
+    filter: brightness(100%);
+    font-size: 0px;
+    background: linear-gradient(45deg,  $additional 25%, $dark-additonal 0, $dark-additonal 50%, 
+        $additional 0, $additional 75%, $dark-additonal 0);
+    background-size: 100px 100px;
+    border: 1px solid $text-icons;
 }
 
 .passive {
-    -webkit-filter: brightness(50%);
-    filter: brightness(50%); 
     cursor: initial;
-    background: linear-gradient(70deg, black, gray);
-    border-color: darkslategrey;
+    background: $additional;
+    border-color: $additional;
+    color: $dark-additonal;
     &:hover {
-        -webkit-filter: brightness(50%);
-        filter: brightness(50%);
         transform: scale(1)
     }
 }
@@ -675,6 +712,9 @@ main {
     @include section-size;
     &__name {
         @include header2;
+        &--icon {
+            @include icon;
+        }
     }
 }
 
@@ -682,16 +722,14 @@ main {
     &__important {
         text-align: center;
         font-weight: 600;
-        color: $vermillion;
+        color: $accent;
     }
     &__item {
         text-align: center;
     }
     &__list {
-        &--item {
-        }
         &--underline {
-            border-bottom: 1px dashed $stark;
+            border-bottom: 1px dashed $text-icons;
         }
     }
 }
@@ -700,6 +738,7 @@ main {
 //SECTION: RELOAD
 .reload {
     @include section-size;
+    margin-top: 30vh;
     &__dots {
         &:after {
             font-size: 800%;
@@ -718,13 +757,16 @@ main {
     @include section-size;
     &__name {
         @include header2;
+        &--icon {
+            @include icon;
+        }
     }
 }
 
 .allabout {
     @include flex-row-jbetween;
     &__photo {
-        border: 1px solid $stark;
+        border: 1px solid $text-icons;
         &--small {
             display: none;
         }
@@ -733,10 +775,10 @@ main {
         margin-left: 3vw;
         &--bold {
             font-weight: 600;
-            color: $vermillion;
+            color: $accent;
         }
         &--underline {
-            color: $vermillion;
+            color: $accent;
         }
     }
 }
@@ -749,6 +791,9 @@ main {
     @include section-size;
     &__name {
         @include header2;
+        &--icon {
+            @include icon;
+        }
     }
 }
 
@@ -771,7 +816,7 @@ main {
             transition: all .1s ease-in-out;
         }
         &--picture {
-            border: 3px solid $stark;
+            border: 3px solid $text-icons;
         }
         &--description {
             @include flex-column-jstart;
@@ -792,14 +837,14 @@ main {
     }
     &__square {
         position: absolute;
-        background-color: $plum;
+        background-color: $dark-primary;
         border-radius: 5px;
         width: 30%;
         height: 25%;
         visibility: hidden;
-        -moz-box-shadow: 0 0 1em $plum;
-        -webkit-box-shadow: 0 0 1em $plum;
-        box-shadow: 0 0 1em $plum;
+        -moz-box-shadow: 0 0 1em $dark-primary;
+        -webkit-box-shadow: 0 0 1em $dark-primary;
+        box-shadow: 0 0 1em $dark-primary;
         cursor: pointer;
         &--github {
             left: 15%;
@@ -810,7 +855,7 @@ main {
             top: 25%;
         }
         &--icon {
-            color: $stark;
+            color: $text-icons;
             font-size: 200%;
             padding: 5%;
             &:before {
@@ -839,6 +884,9 @@ main {
     @include section-size;
     &__name {
         @include header2;
+        &--icon {
+            @include icon;
+        }
     }
     &__lists {
         @include flex-column-jstart;
@@ -846,7 +894,7 @@ main {
         &--description {
             font-size: 110%;
             padding: 1vw;
-            border-bottom: 1px solid $stark;
+            border-bottom: 1px solid $text-icons;
             text-align: center;
         }
     }
@@ -864,6 +912,9 @@ main {
         &--visuallyhidden {
             @include visuallyhidden;
         }
+        &--material {
+            font-size: 100%;
+        }
     }
     &__description {
         font-size: 70%;
@@ -876,14 +927,17 @@ main {
     @include section-size;
     &__name {
         @include header2;
+        &--icon {
+            @include icon;
+        }
     }
     &__link {
-        color: $stark;
+        color: $text-icons;
         text-decoration: none;
         padding-bottom: 1px;
-        border-bottom: 0.5px solid $stark;
+        border-bottom: 0.5px solid $text-icons;
         &:hover {
-            border-bottom-color: $fuschia;
+            border-bottom-color: $light-primary;
         }
     }
     &__item {
@@ -893,12 +947,12 @@ main {
         &:hover {
             -webkit-filter: brightness(110%);
             filter: brightness(110%);
-            text-shadow: 1px 1px 2px $stark;
+            text-shadow: 1px 1px 2px $text-icons;
         }
         &:active {
             -webkit-filter: brightness(110%);
             filter: brightness(110%);
-            text-shadow: 1px 1px 2px $stark;
+            text-shadow: 1px 1px 2px $text-icons;
         }
         &:before {
             font-size: 120%;
@@ -943,13 +997,13 @@ main {
     &__content {
         @include flex-row;
         justify-content: flex-end;
-    height: 4%;
+        height: 4%;
         padding-right: 10px;
         display: inline-flex;
         flex-wrap: wrap;
-        font-family: 'Vollkorn SC', serif;
+        font-family: 'Roboto Slab', serif;
         &--credits {
-            color: $stark;
+            color: $text-icons;
         }
     }
 }

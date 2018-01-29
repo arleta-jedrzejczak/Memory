@@ -2,7 +2,7 @@
     <section class="contact">
         <h2 class="contact__name">
             <span class="contact__name--icon-label">Contact</span>
-            <span class="demo-icon icon-mail contact__name--icon" data-icon="contact" aria-hidden="true"></span>
+            <span class="material-icons contact__name--icon" data-icon="contact" aria-hidden="true">&#xE0E1;</span>
         </h2>
         <p class="contact__item contact__mail" v-html="mail"></p>
         <p class="contact__item contact__facebook"><a class="contact__link" href="https://www.facebook.com/laililang" target="_blank">Facebook</a></p>
