@@ -145,6 +145,7 @@ $super: #FF5722;
         &__description {
             margin-left: 0;
             padding-left: 0;
+            text-align: center;
         }
     }
 
@@ -327,12 +328,6 @@ $super: #FF5722;
         &__icons {
             display: block;
             padding-left: 2vw;
-            &--menu {
-
-            }
-            &--exit {
-
-            }
         }
     }
 

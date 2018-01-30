@@ -452,6 +452,12 @@ body {
             display: table-cell;
             vertical-align: middle;
             text-align: center;
+            -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 
+                0 1px 5px 0 rgba(0, 0, 0, 0.12), 
+                0 3px 1px -2px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 
+                0 1px 5px 0 rgba(0, 0, 0, 0.12), 
+                0 3px 1px -2px rgba(0, 0, 0, 0.2);
         }
         &--size {
             font-size: 250%;
@@ -767,17 +773,23 @@ main {
     @include flex-row-jbetween;
     &__photo {
         border: 1px solid $text-icons;
+        -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 
+            0 1px 5px 0 rgba(0, 0, 0, 0.12), 
+            0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 
+            0 1px 5px 0 rgba(0, 0, 0, 0.12), 
+            0 3px 1px -2px rgba(0, 0, 0, 0.2);
         &--small {
             display: none;
         }
     }
     &__content {
         margin-left: 3vw;
+        &--parag {
+            padding-bottom: 1vh;
+        }
         &--bold {
             font-weight: 600;
-            color: $accent;
-        }
-        &--underline {
             color: $accent;
         }
     }
@@ -816,7 +828,13 @@ main {
             transition: all .1s ease-in-out;
         }
         &--picture {
-            border: 3px solid $text-icons;
+            border: 1px solid $text-icons;
+            -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 
+                0 1px 5px 0 rgba(0, 0, 0, 0.12), 
+                0 3px 1px -2px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 
+                0 1px 5px 0 rgba(0, 0, 0, 0.12), 
+                0 3px 1px -2px rgba(0, 0, 0, 0.2);
         }
         &--description {
             @include flex-column-jstart;
@@ -908,6 +926,25 @@ main {
         padding: 2vw;
         &--devicon {
             font-size: 400%;
+            width: 100px;
+            height: 100px;
+            transition: all .3s ease-in-out;
+            background-color: $secondary-text;
+            border-radius: 50%;
+            display: table;
+            vertical-align: middle;
+            text-align: center;
+            -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 
+                0 1px 5px 0 rgba(0, 0, 0, 0.12), 
+                0 3px 1px -2px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 
+                0 1px 5px 0 rgba(0, 0, 0, 0.12), 
+                0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        }
+        &--position {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
         }
         &--visuallyhidden {
             @include visuallyhidden;
