@@ -3,6 +3,7 @@
 $dark-primary: #303F9F;
 $primary: #3F51B5;
 $light-primary: #7D88C1;
+$superlight-primary: #C5CAE9;
 $text-icons: #FFFFFF;
 $secondary-text: #757575;
 $accent: #8BC34A;
@@ -728,7 +729,7 @@ main {
     &__card {
         color: $super;
         box-sizing: border-box;
-        background-color: $light-primary;
+        background-color: $superlight-primary;
         overflow: visible;
         text-align: center;
         border: 3px solid $accent;
