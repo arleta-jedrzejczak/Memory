@@ -1,17 +1,17 @@
 <template>
     <section class="head">
-    <div class="game">
-        <div class="game__column">
-            <div class="game__card"
-            v-on:click="switchCard(card, cards)"
-            v-for="card in cards"
-            v-bind:key="card.id"
-            v-html="card.text"
-            v-bind:class="{checked: card.checked, passive: card.passive}">
+        <div class="game">
+            <div class="game__column">
+                <div class="game__card"
+                v-on:click="switchCard(card, cards)"
+                v-for="card in cards"
+                v-bind:key="card.id"
+                v-html="card.text"
+                v-bind:class="{checked: card.checked, passive: card.passive}">
+                </div>
             </div>
+            <p class="game__counter">Turn counter: {{ turnCounter }}</p>
         </div>
-        <p class="game__counter">Turn counter: {{ turnCounter }}</p>
-    </div>
     </section>
 </template>
 

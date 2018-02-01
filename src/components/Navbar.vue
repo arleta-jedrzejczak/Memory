@@ -1,19 +1,21 @@
 <template>
     <nav id="navigationAbsolute" class="navigation-bar">
-        <div class="navigation-bar__icons navigation-bar__icons--menu material-icons" v-bind:class="{navmenu: navmenu}" v-on:click="hide = false, navmenu = true, navexit = false" >&#xE5D2;</div>
-        <div class="navigation-bar__icons navigation-bar__icons--exit material-icons" v-bind:class="{navexit: navexit}" v-on:click="hide = true, navmenu = false, navexit = true">&#xE5CD;</div>
-        <ul class="navbar" v-bind:class="{hide: hide}">
-            <li
-            class="navbar__item"
-            v-on:click="changeComponent(item, items)"
-            v-on:mouseover="item.navbardescription = false, item.navdescription = false"
-            v-on:mouseout="item.navbardescription = true, item.navdescription = true"
-            v-for="item in items"
-            v-bind:key="item.id">
-                <div class="navbar__icon" v-html="item.link"></div>
-                <p class="navbar__description" v-bind:class="{navbardescription: item.navbardescription, navdescription: item.navdescription}">{{ item.description }}</p>
-            </li>
-        </ul>
+        <div class="navigation-bar__fixed">
+            <div class="navigation-bar__icons navigation-bar__icons--menu material-icons" v-bind:class="{navmenu: navmenu}" v-on:click="hide = false, navmenu = true, navexit = false" >&#xE5D2;</div>
+            <div class="navigation-bar__icons navigation-bar__icons--exit material-icons" v-bind:class="{navexit: navexit}" v-on:click="hide = true, navmenu = false, navexit = true">&#xE5CD;</div>
+            <ul class="navbar" v-bind:class="{hide: hide}">
+                <li
+                class="navbar__item"
+                v-on:click="changeComponent(item, items)"
+                v-on:mouseover="item.navbardescription = false, item.navdescription = false"
+                v-on:mouseout="item.navbardescription = true, item.navdescription = true"
+                v-for="item in items"
+                v-bind:key="item.id">
+                    <div class="navbar__icon" v-html="item.link"></div>
+                    <p class="navbar__description" v-bind:class="{navbardescription: item.navbardescription, navdescription: item.navdescription}">{{ item.description }}</p>
+                </li>
+            </ul>
+        </div>
     </nav>
 </template>
 

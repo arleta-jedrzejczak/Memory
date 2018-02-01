@@ -489,6 +489,11 @@ body {
 }
 
 
+.up {
+    display: none;
+}
+
+
 .grid {
     @include flex-row-jbetween;
     box-sizing: border-box;
@@ -500,7 +505,11 @@ body {
 //NAVIGATION
 
 .navigation-bar {
+    min-width: 20vw;
     padding-top: 1vw;
+    &__fixed {
+        position: fixed;
+    }
     &__icons {
         display: none;
     }

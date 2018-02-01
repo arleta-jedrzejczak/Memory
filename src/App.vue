@@ -1,20 +1,21 @@
 <template>
-<div class="topper">
-<app-header v-on:changeComponent="updateComponent($event)"/>
-  <div class="grid">
-    <navbar v-bind:component='component' v-on:changeComponent="updateComponent($event)"/>
-    <main>
-      <buttons v-on:changeComponent="updateComponent($event)" v-bind:back="back" v-bind:github="github" v-bind:linked="linked" v-bind:turnCount="turnCount" v-bind:info="info">
-        <div class="buttons__button buttons__button--end" v-bind:class="{restart: restart}" v-if="end" v-on:click="restartGame"><span v-html="link"></span><span v-if="turns">{{ turnCount }} turns!</span></div>
-      </buttons>
-      <transition>
-        <keep-alive v-bind:include=alive>
-          <component v-bind:is="component" v-bind:mail="mail" v-on:changeComponent="updateComponent($event)" v-on:changeGithub="updateGithub($event)" v-on:changeLinked="updateLinked($event)" v-on:winnerAlert="winnerTurns($event)"/>
-        </keep-alive>
-      </transition>
-    </main>  
+  <div class="topper">
+  <app-header v-on:changeComponent="updateComponent($event)"/>
+  <div v-if="scroll" v-on:click="up" class="up"><span class="up__text">Up</span></div>
+    <div class="grid">
+      <navbar v-bind:component='component' v-on:changeComponent="updateComponent($event)"/>
+      <main>
+        <buttons v-on:changeComponent="updateComponent($event)" v-bind:back="back" v-bind:github="github" v-bind:linked="linked" v-bind:turnCount="turnCount" v-bind:info="info">
+          <div class="buttons__button buttons__button--end" v-bind:class="{restart: restart}" v-if="end" v-on:click="restartGame"><span v-html="link"></span><span v-if="turns">{{ turnCount }} turns!</span></div>
+        </buttons>
+        <transition>
+          <keep-alive v-bind:include=alive>
+            <component v-bind:is="component" v-bind:mail="mail" v-on:changeComponent="updateComponent($event)" v-on:changeGithub="updateGithub($event)" v-on:changeLinked="updateLinked($event)" v-on:winnerAlert="winnerTurns($event)"/>
+          </keep-alive>
+        </transition>
+      </main>  
+    </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -56,10 +57,17 @@ export default {
       turns: true,
       restart: false,
       mail: '',
-      alive: ['Home']
+      alive: ['Home'],
+      scroll: false
     }
   },
   methods: {
+    up: function() {
+      window.scroll(0, 0);
+    },
+    handleScroll: function () {
+      this.scroll = true;
+    },
     backToGame: function() {
       const vm = this;
       vm.component = 'Home';
@@ -123,7 +131,13 @@ export default {
       vm.end = true;
       setTimeout(vm.newLink, 5000);
     }
-  }
+  },
+    created () {
+    document.addEventListener('scroll', this.handleScroll);
+    },
+    destroyed () {
+    document.removeEventListener('scroll', this.handleScroll);
+    }
 }
 </script>
 
