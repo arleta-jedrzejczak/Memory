@@ -1,7 +1,7 @@
 <template>
   <div class="topper">
   <app-header v-on:changeComponent="updateComponent($event)"/>
-  <div v-if="scroll" v-on:click="up" class="up"><span class="up__text">Up</span></div>
+  <div v-if="scroll" v-on:click="up" class="up"><span class="up__text">Up!</span></div>
     <div class="grid">
       <navbar v-bind:component='component' v-on:changeComponent="updateComponent($event)"/>
       <main>
