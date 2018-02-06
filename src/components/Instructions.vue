@@ -5,7 +5,7 @@
       <span class="demo-icon icon-key instructions__name--icon" data-icon="key" aria-hidden="true"></span>
     </h2>
     <div class="rules">
-      <p class="rules__important">IMPORTANT: This memory game is a form of the navigation!</p><br>
+      <p class="rules__important">IMPORTANT: The memory game is a form of the navigation!</p><br>
       <p class="rules__item">Rules:</p>
       <ul class="rules__list">
         <li class="rules__list--item">1. Pick a card.</li>
