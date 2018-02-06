@@ -55,7 +55,7 @@ export default {
             linkdemo: '<a href=https://laililang.github.io/Business/ target="_blank"><i class="demo-icon icon-eye projects-list__square--icon"></i></a>' },
 
             { id: 3, picture: '<img class="projects-list__figure--picture" src="src/images/printpixel.png" alt="pixel art maker project screen"/>',
-            description: 'Business & Creative',
+            description: 'Pixel Art Maker',
             minicons: '<span class="projects-list__minicons--item devicon-html5-plain" title="HTML5"></span><span class="projects-list__minicons--item devicon-css3-plain" title="CSS3"></span><span class="projects-list__minicons--item demo-icon icon-mobile" title="RWD"></span><span class="projects-list__minicons--item devicon-jquery-plain"  title="jQuery"></span>',
             pictureHover: false,
             visibleIcon: false,

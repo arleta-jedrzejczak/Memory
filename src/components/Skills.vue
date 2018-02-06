@@ -87,11 +87,11 @@
             <h3 class="skills__lists--description">Scholarships, workshops and certifications:</h3>
             <ul class="my-skills">
                 <li class="my-skills__item">
-                    <div class="my-skills__item--devicon" title="Google Udacity Scholar 2017">
+                    <div class="my-skills__item--devicon" title="Google Developer Challenge Scholarship">
                         <span class="my-skills__item--position devicon-google-plain"></span>
-                        <span class="my-skills__item--visuallyhidden">google udacity scholar icon</span>
+                        <span class="my-skills__item--visuallyhidden">google icon</span>
                     </div>
-                    <p class="my-skills__description">Google Udacity Scholar 2017</p>
+                    <p class="my-skills__description">Google Developer Challenge Scholarship</p>
                 </li>
                 <li class="my-skills__item">
                     <div class="my-skills__item--devicon" title="Learn IT, Girl 3rd edition">
