@@ -12,6 +12,7 @@
         <li class="item item-7"></li>
         <li class="item item-8"></li>
       </ul>
+    </div>
 </template>
 
 <script>

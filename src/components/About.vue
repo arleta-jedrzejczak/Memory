@@ -8,10 +8,10 @@
         <span v-html="img"></span>
         <span v-html="imgsquare"></span>
         <article class="allabout__content">
-          <p class="allabout__content--parag">Hello! My name is <span class="allabout__content--bold">Arleta</span>. I am a Poland-based aspiring web developer striving to become great at my job.
-          <p class="allabout__content--parag">I find passion in creating visual stuff as well as exploring front-end environments. I am also a pixel perfectionist interested in server-side development starting my adventure with PHP and MySQL.
+          <p class="allabout__content--parag">Hello! My name is <span class="allabout__content--bold">Arleta</span>. I am a Poland-based Junior Front-End Developer striving to become great at my job.
+          <p class="allabout__content--parag">I find passion in creating visual stuff as well as exploring front-end environments. I am also a pixel perfectionist interested in full-stack development starting my adventure with server-side JavaScript.
           </p>
-          <p class="allabout__content--parag">I am currently <span class="allabout__content--bold">looking for a job or internships as a junior front-end developer</span>.</p>
+          <p class="allabout__content--parag">I am currently <span class="allabout__content--bold">looking for new professional opportunities in development</span>.</p>
         </article>
     </div>
   </section>

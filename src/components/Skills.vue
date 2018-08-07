@@ -62,25 +62,25 @@
                     <p class="my-skills__description">Bootstrap</p>
                 </li>
                 <li class="my-skills__item">
-                    <div class="my-skills__item--devicon" title="jQuery">
-                        <span class="my-skills__item--position devicon-jquery-plain"></span>
-                        <span class="my-skills__item--visuallyhidden">j query icon</span>
+                    <div class="my-skills__item--devicon" title="AngularJS">
+                        <span class="my-skills__item--position devicon-angularjs-plain"></span>
+                        <span class="my-skills__item--visuallyhidden">angural j s icon</span>
                     </div>
-                    <p class="my-skills__description">jQuery</p>
+                    <p class="my-skills__description">AngularJS</p>
                 </li>
                 <li class="my-skills__item">
-                    <div class="my-skills__item--devicon" title="PHP">
-                        <span class="my-skills__item--position devicon-php-plain"></span>
-                        <span class="my-skills__item--visuallyhidden">p h p icon</span>
+                    <div class="my-skills__item--devicon" title="Webpack">
+                        <span class="my-skills__item--position devicon-webpack-plain"></span>
+                        <span class="my-skills__item--visuallyhidden">webpack</span>
                     </div>
-                    <p class="my-skills__description">PHP</p>
+                    <p class="my-skills__description">Webpack</p>
                 </li>
                 <li class="my-skills__item">
-                    <div class="my-skills__item--devicon" title="MySQL">
-                        <span class="my-skills__item--position devicon-mysql-plain"></span>
-                        <span class="my-skills__item--visuallyhidden">my s q l icon</span>
+                    <div class="my-skills__item--devicon" title="React">
+                        <span class="my-skills__item--position devicon-react-original"></span>
+                        <span class="my-skills__item--visuallyhidden">react</span>
                     </div>
-                    <p class="my-skills__description">MySQL</p>
+                    <p class="my-skills__description">React</p>
                 </li>
             </ul>
 
@@ -106,6 +106,13 @@
                         <span class="my-skills__item--visuallyhidden">VueJS 2 workshops icon</span>
                     </div>
                     <p class="my-skills__description">VueJS 2 workshops - STXNext</p>
+                </li>
+                <li class="my-skills__item">
+                    <div class="my-skills__item--devicon" title="ngGirls">
+                        <span class="my-skills__item--position devicon-angularjs-plain"></span>
+                        <span class="my-skills__item--visuallyhidden">n g girls</span>
+                    </div>
+                    <p class="my-skills__description">ngGirls</p>
                 </li>
                 <li class="my-skills__item">
                     <div class="my-skills__item--devicon" title="SQL workshops - Accenture">
@@ -138,6 +145,13 @@
                         <span class="my-skills__item--visuallyhidden">git icon</span>
                     </div>
                     <p class="my-skills__description">GIT</p>
+                </li>
+                <li class="my-skills__item">
+                    <div class="my-skills__item--devicon" title="Trello">
+                        <span class="my-skills__item--position devicon-trello-plain"></span>
+                        <span class="my-skills__item--visuallyhidden">trello</span>
+                    </div>
+                    <p class="my-skills__description">Trello</p>
                 </li>
             </ul>
 

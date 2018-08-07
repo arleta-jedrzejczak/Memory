@@ -30,6 +30,24 @@ export default {
     return {
         items: [
             { id: 0,
+            picture: '<img class="projects-list__figure--picture" src="src/images/samplesprint.png" alt="samples project screen"/>',
+            description: 'Próbki szkoleń GroMar Sp. z o.o.',
+            minicons: '<span class="projects-list__minicons--item devicon-html5-plain" title="HTML5"></span><span class="projects-list__minicons--item devicon-css3-plain" title="CSS3"></span></span><span class="projects-list__minicons--item devicon-javascript-plain" title="JavaScript"></span><span class="projects-list__minicons--item devicon-vuejs-plain" title="VueJS 2"></span><span class="projects-list__minicons--item devicon-webpack-plain" title="Webpack"></span><span class="projects-list__minicons--item devicon-babel-plain" title="Babel"></span>',
+            pictureHover: false,
+            visibleIcon: false,
+            linkgit: '<a href="https://github.com/arletajedrzejczak/Samples" target="_blank"><i class="demo-icon icon-github-circled projects-list__square--icon"></i></a>',
+            linkdemo: '<a href="https://probki.pliki.gromar.eu/_app" target="_blank"><i class="demo-icon icon-eye projects-list__square--icon"></i></a>' },
+
+            { id: 1,
+            picture: '<img class="projects-list__figure--picture" src="src/images/turbocesky.png" alt="training project screen"/>',
+            description: 'Turbo-czeski e-learning',
+            minicons: '<span class="projects-list__minicons--item devicon-html5-plain" title="HTML5"></span><span class="projects-list__minicons--item devicon-css3-plain" title="CSS3"></span></span><span class="projects-list__minicons--item devicon-javascript-plain" title="JavaScript"></span><span class="projects-list__minicons--item devicon-angularjs-plain" title="AngularJS"></span>',
+            pictureHover: false,
+            visibleIcon: false,
+            linkgit: '<a href="https://github.com/laililang/Turbo-czeski" target="_blank"><i class="demo-icon icon-github-circled projects-list__square--icon"></i></a>',
+            linkdemo: '<a href="https://laililang.github.io/Turbo-czeski" target="_blank"><i class="demo-icon icon-eye projects-list__square--icon"></i></a>' },
+
+            { id: 2,
             picture: '<img class="projects-list__figure--picture" src="src/images/printportfolio.png" alt="portfolio project screen"/>',
             description: 'My portfolio',
             minicons: '<span class="projects-list__minicons--item devicon-html5-plain" title="HTML5"></span><span class="projects-list__minicons--item devicon-css3-plain" title="CSS3"></span><span class="projects-list__minicons--item devicon-sass-original" title="Sass/SCSS"></span><span class="projects-list__minicons--item demo-icon icon-mobile" title="RWD"></span><span class="projects-list__minicons--item devicon-javascript-plain" title="JavaScript"></span><span class="projects-list__minicons--item devicon-vuejs-plain" title="VueJS 2"></span>',
@@ -38,7 +56,7 @@ export default {
             linkgit: '<a href="https://github.com/laililang/Memory" target="_blank"><i class="demo-icon icon-github-circled projects-list__square--icon"></i></a>',
             linkdemo: '<a href="https://laililang.github.io/Memory" target="_blank"><i class="demo-icon icon-eye projects-list__square--icon"></i></a>' },
 
-            { id: 1, picture: '<img class="projects-list__figure--picture" src="src/images/printtodo.png" alt="to do project screen"/>',
+            { id: 3, picture: '<img class="projects-list__figure--picture" src="src/images/printtodo.png" alt="to do project screen"/>',
             description: 'To Do (Before You Die) Application',
             minicons: '<span class="projects-list__minicons--item devicon-html5-plain" title="HTML5"></span><span class="projects-list__minicons--item devicon-css3-plain" title="CSS3"></span><span class="projects-list__minicons--item demo-icon icon-mobile" title="RWD"></span><span class="projects-list__minicons--item devicon-javascript-plain"  title="JavaScript"></span>',
             pictureHover: false,
@@ -46,7 +64,7 @@ export default {
             linkgit: '<a href="https://github.com/laililang/To-Do-App" target="_blank"><i class="demo-icon icon-github-circled projects-list__square--icon"></i></a>',
             linkdemo: '<a href="https://laililang.github.io/To-Do-App/" target="_blank"><i class="demo-icon icon-eye projects-list__square--icon"></i></a>' },
 
-            { id: 2, picture: '<img class="projects-list__figure--picture" src="src/images/printbusiness.png" alt="bootstrap project screen"/>',
+            { id: 4, picture: '<img class="projects-list__figure--picture" src="src/images/printbusiness.png" alt="bootstrap project screen"/>',
             description: 'Business & Creative',
             minicons: '<span class="projects-list__minicons--item devicon-html5-plain" title="HTML5"></span><span class="projects-list__minicons--item devicon-css3-plain" title="CSS3"></span><span class="projects-list__minicons--item demo-icon icon-mobile" title="RWD"></span><span class="projects-list__minicons--item devicon-bootstrap-plain"  title="Bootstrap"></span>',
             pictureHover: false,
@@ -54,7 +72,7 @@ export default {
             linkgit: '<a href=https://github.com/laililang/Business target="_blank"><i class="demo-icon icon-github-circled projects-list__square--icon"></i></a>',
             linkdemo: '<a href=https://laililang.github.io/Business/ target="_blank"><i class="demo-icon icon-eye projects-list__square--icon"></i></a>' },
 
-            { id: 3, picture: '<img class="projects-list__figure--picture" src="src/images/printpixel.png" alt="pixel art maker project screen"/>',
+            { id: 5, picture: '<img class="projects-list__figure--picture" src="src/images/printpixel.png" alt="pixel art maker project screen"/>',
             description: 'Pixel Art Maker',
             minicons: '<span class="projects-list__minicons--item devicon-html5-plain" title="HTML5"></span><span class="projects-list__minicons--item devicon-css3-plain" title="CSS3"></span><span class="projects-list__minicons--item demo-icon icon-mobile" title="RWD"></span><span class="projects-list__minicons--item devicon-jquery-plain"  title="jQuery"></span>',
             pictureHover: false,
